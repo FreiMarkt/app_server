@@ -1,0 +1,23 @@
+.wrap {
+	width:90%;
+}
+
+    .project {
+    	margin-left: 20%;
+    	width: 60%;
+    }
+
+    .profiles {
+    	width:100%;
+    }
+
+.bozen .vilnius .oulu {
+	width: 100%;
+	height: auto;
+}
+
+.person {
+	width: 160px;
+	float:left;
+	margin-left: 10px;
+}
