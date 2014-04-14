@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8">
 <title>KOIN</title>
-<link href="./style1.css" rel="stylesheet" type="text/css" />
+<link href="style1.css" rel="stylesheet" type="text/css" />
 
 </head>
 
@@ -17,18 +17,17 @@
     <li><a href="">English</a></li>
     </ul>
 </div>
+
 <div id="autorization">
-    <ul> <li><a href="sign_in.html">Sign in</a></li>
-    <li><a href="log_in.html">Log in</a></li>
-    </ul>
-</div>
+        <ul> <li><a href="Myaccount.html">My account</a></li>
+        <li><a href="logout.html">Log out</a></li>
+        
+        </ul>
+    </div>
 
-<div class="flymenu">
-   <ul> <li><a href="offer.html">offer your good or service</a></li>
-    </ul> 
-</div>
 
-<div id="search"><p>What are you looking for?</p>
+
+<div id="offer"><p>I want to offer</p>
     <div id="radio">
         <input type="radio" name="group1" id="services" value="services" checked="cheked"/> services <br>
 <input type="radio" name="group1" id="goods" value="goods" /> goods <br>
@@ -60,6 +59,24 @@
   <option value="...">...</option>
 </select></div>
 </div>
+
+<p>Upload photo</p>
+   <div id="FileUpload">
+   
+    <input type="file" size="24" id="BrowserHidden" onchange="getElementById('FileField').value = getElementById('BrowserHidden').value;" />
+    <div id="BrowserVisible"><input type="text" id="FileField" /></div>
+</div>
+
+    <div>
+    <label for="descriptionoffer" class="">describe your good or service</label>
+    <input type="text" name="descriptionoffer" id="descriptionoffer"/>
+    </div>
+
+    <div>
+    <label for="price" class="">price in hours credits</label>
+    <input type="text" name="price" id="price"/>
+    </div>
+
 <button id="clickButton" class="buttonStyle">search</button>
 </div>
 <script> 

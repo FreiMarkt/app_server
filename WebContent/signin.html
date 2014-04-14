@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<title>KOIN</title>
+<link href="style1.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+<div id="wrap">
+    <div id="language">
+        <ul> <li><a href="">German</a></li>
+        <li><a href="">Italian</a></li>
+        <li><a href="">English</a></li>
+        </ul>
+    </div>
+    <div id="autorization">
+        <ul> <li><a href="signin.html">Sign in</a></li>
+        <li><a href="login.html">Log in</a></li>
+        </ul>
+    </div>
+
+    <div class="flymenu">
+       <ul> <li><a href="service.html">do you need help or want to leave a feedback? Click here!</a></li>
+        </ul> 
+    </div>
+    
+    <div>
+    <label for="name" class="fixedwidth">Name</label>
+    <input type="text" name="name" id="name"/>
+    </div>
+   
+    <div>
+    <label for="lastname" class="fixedwidth">Last name</label>
+    <input type="text" name="lastname" id="lastname"/>
+    </div>
+    
+    <input type="file" size="24" id="BrowserHidden" onchange="getElementById('FileField').value = getElementById('BrowserHidden').value;" />
+    <div id="BrowserVisible"><input type="text" id="FileField" /></div>
+</div>
+
+    
+    <label for="day">Date of Birth (normal):</label>
+    <div id="date2" class="datefield">
+        <input id="day" type="tel" maxlength="2" placeholder="DD"/> /
+        <input id="month" type="tel" maxlength="2" placeholder="MM"/> /
+        <input id="year" type="tel" maxlength="4" placeholder="YYYY" />
+    </div>
+
+<div id="radio">
+        <input type="radio" name="gender" id="male" value="male" checked="cheked"/> male 
+<input type="radio" name="gender" id="female" value="female" /> female <br>
+    </div>
+    
+    
+    <div> 
+    <label for="phonenumber" class="fixedwidth">Phone number</label>
+    <input type="text" name="phonenumber" id="phonenumber"/>
+    </div>
+    
+    <div>
+    <label for="residence" class="fixedwidth">Residence</label>
+    <input type="text" name="residence" id="residence"/>
+    </div>
+    
+    <div> 
+    <label for="invitedby" class="fixedwidth">Invited by</label>
+    <input type="text" name="invitedby" id="invitedby"/>
+    </div>
+    
+    <div>
+    <label for="password" class="fixedwidth">Password</label>
+    <input type="text" name="password" id="password"/>
+    </div>
+    
+    <div>
+    <label for="repeatpassword" class="fixedwidth">Repeat password</label>
+    <input type="text" name="repeatpassword" id="repeatpassword"/>
+    </div>
+    
+    <button id="clickButton" class="buttonStyle">next step</button>
+    
+    
+</div>
+</body>
+</html>

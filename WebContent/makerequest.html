@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8">
 <title>KOIN</title>
-<link href="./style1.css" rel="stylesheet" type="text/css" />
+<link href="style1.css" rel="stylesheet" type="text/css" />
 
 </head>
 
@@ -17,18 +17,17 @@
     <li><a href="">English</a></li>
     </ul>
 </div>
+
 <div id="autorization">
-    <ul> <li><a href="sign_in.html">Sign in</a></li>
-    <li><a href="log_in.html">Log in</a></li>
-    </ul>
-</div>
+        <ul> <li><a href="Myaccount.html">My account</a></li>
+        <li><a href="logout.html">Log out</a></li>
+        
+        </ul>
+    </div>
 
-<div class="flymenu">
-   <ul> <li><a href="offer.html">offer your good or service</a></li>
-    </ul> 
-</div>
 
-<div id="search"><p>What are you looking for?</p>
+
+<div id="offer"><p>Not yet on the list</p>
     <div id="radio">
         <input type="radio" name="group1" id="services" value="services" checked="cheked"/> services <br>
 <input type="radio" name="group1" id="goods" value="goods" /> goods <br>
@@ -60,7 +59,22 @@
   <option value="...">...</option>
 </select></div>
 </div>
-<button id="clickButton" class="buttonStyle">search</button>
+
+<p>Upload photo</p>
+   <div id="FileUpload">
+   
+    <input type="file" size="24" id="BrowserHidden" onchange="getElementById('FileField').value = getElementById('BrowserHidden').value;" />
+    <div id="BrowserVisible"><input type="text" id="FileField" /></div>
+</div>
+
+    <div>
+    <label for="descriptionrequest" class="fixedwidth">describe good or service you want somebody to offer you</label>
+    <input type="text" name="descriptionrequest" id="descriptionrequest"/>
+    </div>
+
+
+
+<button id="clickButton" class="buttonStyle">submit</button>
 </div>
 <script> 
 var myButton = document.getElementById("clickButton");
@@ -82,3 +96,4 @@ function doSomething() {
 </div>
 </body>
 </html>
+
