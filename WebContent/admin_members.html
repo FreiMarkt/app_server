@@ -1,0 +1,57 @@
+<html>
+  <header>
+    <title>Administration</title>
+    <script type="application/javascript">
+      function makeTable() {
+    	var jsonstring = '{}';
+        var request = xmlhttp=new XMLHttpRequest();
+        request.open("GET","http://localhost:8080/howaboutno/moo/member/getAll",false);
+        request.send();
+        
+        if (request.status == 200) {
+        	jsonstring = request.responseText;
+        } else {
+          alert("problems");
+        }
+        
+        //var jsonstring = '[{"firstname":"{moo}","lastname":"{foo}","ppassword":"{1234}","age":100,"gender":true,"address":"vilnius, lithuania","city":"{vilnius}","country":"{lithuania}","email":"{me@company.com}","phonenumber":"+37068600597","paymentStatus":true,"fiftyfivemember":false,"postalcode":"{11111}","birthday":"2012-01-01","roleId":3,"memberID":"{123}"},{"firstname":"{a}","lastname":"{b}","ppassword":"{12345}","age":100,"gender":true,"address":"vilnius, lithuania","city":"{vilnius}","country":"{lithuania}","email":"{me@company.com}","phonenumber":"+37068600597","paymentStatus":true,"fiftyfivemember":false,"postalcode":"{11111}","birthday":"2012-01-01","roleId":3,"memberID":"{1234}"}]';
+        var object = JSON.parse(jsonstring);
+        
+        var table = '<table border="1">';
+        
+        // make header
+        var header = '<tr>';
+        for (var propertyName in object[0]) {
+          table = table.concat('<th>')
+            table = table.concat(propertyName); 
+            table = table.concat('</th>')
+        }
+        header = header.concat('</tr>');
+        
+        //append header to the table
+        table = table.concat(header);
+        
+        // iterate through objects
+        for (var index in object) {
+          table = table.concat('<tr>');
+          // iterate through properties of objects
+          for (var property in object[index]) {
+            table = table.concat('<td>')
+            table = table.concat(object[index][property]); 
+            table = table.concat('</td>')
+          }
+          table = table.concat('</tr>');
+        }
+        table = table.concat('</table>');
+        // display in the popup
+        var element = document.getElementById("thebutton");
+        element.insertAdjacentHTML("afterend", table);
+      }
+      
+    </script>
+  </header>
+  <body>
+    <h1>Member List:</h1>
+    <button id="thebutton" type="button" onclick="makeTable()">Print Members Table</button>
+  </body>
+</html>
