@@ -5,7 +5,7 @@
       function makeTable() {
     	var jsonstring = '{}';
         var request = xmlhttp=new XMLHttpRequest();
-        request.open("GET","http://localhost:8080/howaboutno/moo/member/getAll",false);
+        request.open("GET","http://sfdj14.inf.unibz.it/rest_services/moo/member/getAll",false);
         request.send();
         
         if (request.status == 200) {
