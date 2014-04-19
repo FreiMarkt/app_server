@@ -48,10 +48,24 @@
         element.insertAdjacentHTML("afterend", table);
       }
       
+      /*
+       * function that sends JSON to the REST webservice that knows hot to save it to the database
+       */
+      function insertNewMember() {
+        var url = '/rest_services/moo/member/save';
+        var jsonString = '{\"firstname\":\"{Dainius}\",\"lastname\":\"{Jocas}\",\"username\":\"{dainiusjocas}\",\"ppassword\":\"{password}\",\"age\":25,\"gender\":true,\"address\":\"vilnius, lietuva\",\"city\":\"{Vilnius}\",\"country\":\"{Lithuania}\",\"email\":\"{dainius.jocas@gmail.com}\",\"phonenumber\":\"{+37068600597}\",\"paymentStatus\":true,\"fiftyfivemember\":true,\"postalcode\":\"{86430}\",\"birthday\":\"3889-05-11\",\"roleId\":3,\"memberID\":\"{' + Math.floor((Math.random()*10000)+1) + '}\"}';
+    	var http = new XMLHttpRequest();
+    	http.open("POST", url, true);
+      	http.setRequestHeader('Content-Type', 'application/json');
+      	http.send(jsonString);
+        return true;
+      }
+      
     </script>
   </header>
   <body>
     <h1>Member List:</h1>
     <button id="thebutton" type="button" onclick="makeTable()">Print Members Table</button>
+    <button id="insertButton" type="button" onclick="insertNewMember()">Insert new member</button>
   </body>
 </html>
