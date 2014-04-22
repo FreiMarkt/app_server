@@ -20,8 +20,8 @@ function makeHeader(object) {
 function getArrayOfMembers() {
 	var jsonstring = '{}';
 	var request = xmlhttp=new XMLHttpRequest();
-	request.open("GET", "/howaboutno/moo/member/getAll", false);
-//	request.open("GET","/rest_services/moo/member/getAll",false);
+//	request.open("GET", "/howaboutno/moo/member/getAll", false);
+	request.open("GET","/rest_services/moo/member/getAll",false);
 	request.send();
 
 	if (request.status == 200) {
@@ -41,12 +41,12 @@ function getArrayOfMembers() {
 function fillRows(arrayOfObjects) {
 	var table = '';
 	// iterate through objects
-	for (var index in object) {
+	for (var index in arrayOfObjects) {
 		table = table.concat('<tr>');
 		// iterate through properties of objects
-		for (var property in object[index]) {
+		for (var property in arrayOfObjects[index]) {
 			table = table.concat('<td>');
-			table = table.concat(object[index][property]); 
+			table = table.concat(arrayOfObjects[index][property]); 
 			table = table.concat('</td>');
 		}
 		table = table.concat('</tr>');
