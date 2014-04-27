@@ -117,6 +117,18 @@ a {
         0 0 0 12px #a5c74b; 
 }
 
+.form-31 {
+    
+    /* Size and position */
+    width: 300px;
+    position: relative;
+    margin: 60px auto 30px;
+    padding: 10px;
+    overflow: hidden;
+
+    
+}
+
 .form-3 label {
     /* Size and position */
     width: 50%;
@@ -226,4 +238,113 @@ a {
 }
 
 
+
+
+.form-31 label {
+    /* Size and position */
+    width: 50%;
+    float: left;
+    padding-top: 9px;
+
+    /* Styles */
+
+    cursor: pointer;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.8);
+    font-size: 11px;
+    text-indent: 10px;
+    cursor: pointer;
+}
+
+.form-31 input[type=text],
+.form-31 input[type=password] {
+    /* Size and position */
+    width: 50%;
+    float: left;
+    padding: 8px 5px;
+    margin-bottom: 10px;
+    font-size: 13px;
+
+     border: 3px solid #ebe6e2;
+    border-radius: 5px;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.form-31 input[type=text]:hover,
+.form-31 input[type=password]:hover,
+.form-31 label:hover ~ input[type=text],
+.form-31 label:hover ~ input[type=password] {
+    border-color: #CCC;
+}
+
+.form-31 input[type=text]:focus, 
+.form-31 input[type=password]:focus {
+    border-color: #BBB;
+    outline: none; /* Remove Chrome's outline */
+}
+
+.form-31 p:nth-child(3),
+.form-31 p:nth-child(4) {
+    float: left;
+    width: 50%;
+}
+
+.form-31 label[for=remember] {
+    width: auto;
+    float: none;
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0px;
+    text-indent: 2px;
+}
+
+.form-31 input[type=checkbox] {
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+.form-31 input[type=submit] {
+    /* Width and position */
+    width: 100%;
+    padding: 8px 5px;
+  
+    /* Styles */
+    margin-left: 1%;
+    background: #fbd568; /* Fallback */
+    background: -moz-linear-gradient(#fbd568, #ffb347);
+    background: -ms-linear-gradient(#fbd568, #ffb347);
+    background: -o-linear-gradient(#fbd568, #ffb347);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#fbd568), to(#ffb347));
+    background: -webkit-linear-gradient(#fbd568, #ffb347);
+    background: linear-gradient(#fbd568, #ffb347);
+    border: 1px solid #f4ab4c;
+    color: #996319;
+    text-shadow: 0 1px rgba(255,255,255,0.3);
+    cursor:pointer;
+  
+    /* Font styles */
+    
+    color: white;
+    font-weight: 700;
+    font-size: 15px;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.8);
+}
+
+.form-31 input[type=submit]:hover { 
+    box-shadow: 
+        inset 0 1px rgba(255,255,255,0.3), 
+        inset 0 20px 40px rgba(255,255,255,0.15);
+}
+
+.form-31 input[type=submit]:active { 
+    top: 1px;
+}
+
+.no-boxshadow .form-31 input[type=submit]:hover {
+    background: #ffb347;
+}
 

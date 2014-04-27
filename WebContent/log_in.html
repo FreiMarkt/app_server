@@ -8,7 +8,7 @@
         <meta name="description" content="Custom Login Form Styling with CSS3" />
         <meta name="keywords" content="css3, login, form, custom, input, submit, button, html5, placeholder" />
         <meta name="author" content="Codrops" />
-        <link rel="shortcut icon" href="../favicon.ico"> 
+        
         <link rel="stylesheet" type="text/css" href="css/style.css" />
         <link rel="stylesheet" type="text/css" href="css/styleradio.css" />
          <link rel="stylesheet" type="text/css" href="style_datefield.css" />
@@ -90,7 +90,7 @@
 
 				<div class="autorization">
 					<ul>
-						<li class="link" id="signin"><a href="sign_in.html">Sign in</a></li>
+						<li class="link" id="signin"><a href="1step.html">Sign in</a></li>
 						<li class="link" id="login"><a href="log_in.html">Log in</a></li>
 					</ul>
 				</div>
@@ -99,73 +99,25 @@
 
         <div class="container">
 
-        <div align="center"><img src="images/1step.png"/></div>
 			
 			<section class="main">
-				<form class="form-3">
+				<form class="form-31">
 				    <p class="clearfix">
-				    <label for="name" class="fixedwidth">Name</label>
-				   <input type="text" name="name" id="name" placeholder="your name"/>
+				    <label for="login" class="fixedwidth">Login</label>
+				   <input type="text" name="login" id="login" />
 				    </p>
 
 				    <p class="clearfix"> 
 				        <label for="password">Password</label>
-				        <input type="text" name="lastname" id="lastname" placeholder="lastname"/> 
+				        <input type="text" name="password" id="password" /> 
 				    </p>
 
-				    <p class="clearfix"> 
-				        <label for="day">Date of Birth </label>
-
-						<div id="date2" class="datefield">
-				        <input id="day" type="tel" maxlength="2" placeholder="DD"/> /
-				        <input id="month" type="tel" maxlength="2" placeholder="MM"/> /
-				        <input id="year" type="tel" maxlength="4" placeholder="YYYY" />
-				    	</div>
-				    </p>
-
-				    <p class="clearfix"> 
-				        <label for="day">Gender</label>
-
-				        <div style="position: absolute; bottom: 50%; margin-bottom: 6px; ">
-						<input type="radio" id="r1" name="rr" value="male" checked="checked"/>
-						<label for="r1"><span></span>male</label>
-						</div>
-
-						<div style="position: absolute; bottom: 50%; margin-bottom: 6px; left:70px;">
-						<p><input type="radio" id="r2" name="rr" value="female"/><label for="r2"><span></span>female</label>
-						</p>
-						</div>
-				    </p>
-
-				    <p class="clearfix"> 
-				        <label for="phonenumber" class="fixedwidth">Phone number</label>
-				        <input type="text" name="phonenumber" id="phonenumber"/>
-				    </p>
-
-				    <p class="clearfix"> 
-				        <label for="residence" class="fixedwidth">Residence</label>
-				        <input type="text" name="residence" id="residence"/> 
-				    </p>
-
-				    <p class="clearfix"> 
-				        <label for="invitedby" class="fixedwidth">Invited by</label>
-				        <input type="text" name="invitedby" id="invitedby"/>
-				    </p>
-
-				    <p class="clearfix"> 
-				        <label for="password" class="fixedwidth">Password</label>
-				        <input type="text" name="password" id="password"/>
-				    </p>
-
-				    <p class="clearfix"> 
-				        <label for="repeatpassword" class="fixedwidth">Repeat password</label>
-				        <input type="text" name="repeatpassword" id="repeatpassword"/>
-				    </p>
-
-				    
 				    <p class="clearfix">
-				        <input type="submit" name="submit" value="next step">
-				    </p>       
+						
+					<input type="submit" formaction="test1.html" name="submit" value="log in">
+				        
+				    </p>  
+				    <a href="forget_password.html" >
 				</form>​
 			</section>
 			
