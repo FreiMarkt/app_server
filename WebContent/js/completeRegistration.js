@@ -58,8 +58,8 @@ function completeRegistration() {
  * their restriction on being NON NULL.
  */
 function insertNewMember(member) {
-//	var url = '/rest_services/moo/member/save';
-	var url = '/howaboutno/moo/member/save';
+	var url = '/rest_services/moo/member/save';
+//	var url = '/howaboutno/moo/member/save';
     var http = new XMLHttpRequest();
 	http.open("POST", url, true);
 	http.setRequestHeader('Content-Type', 'application/json');
