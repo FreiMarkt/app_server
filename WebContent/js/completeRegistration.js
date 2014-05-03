@@ -8,7 +8,7 @@ function getEmptyMember() {
 	"username": "unknown",
 	"ppassword": "unknown",
 	"age": 0,
-	"gender": true,
+	"gender": 'male',
 	"address": "unknown",
 	"city": "unknowm",
 	"country": "unknown",
@@ -18,8 +18,7 @@ function getEmptyMember() {
 	"fiftyfivemember": true,
 	"postalcode": "unknown",
 	"birthday": "1970-01-01",
-	"roleId": 3,
-	"memberID": Math.floor((Math.random()*10000)+1)
+	"roleId": 3
     };
   return member;
 }
@@ -58,10 +57,9 @@ function completeRegistration() {
  * their restriction on being NON NULL.
  */
 function insertNewMember(member) {
-	var url = '/rest_services/moo/member/save';
-//	var url = '/howaboutno/moo/member/save';
+	var url = '/rest_services/r/member/save';
     var http = new XMLHttpRequest();
-	http.open("POST", url, true);
+	http.open("POST", url, false);
 	http.setRequestHeader('Content-Type', 'application/json');
 	http.send(JSON.stringify(member));
 	return true;
