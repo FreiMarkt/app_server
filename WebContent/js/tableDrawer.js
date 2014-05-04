@@ -67,7 +67,7 @@ function deleteThis(memberid) {
 }
 
 function modifyThis(memberid) {
-  alert('not implemented');
+  window.location.href = "modifyMember.html?memberid=" + memberid;
 }
 
 /**
