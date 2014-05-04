@@ -12,10 +12,9 @@ function logIn() {
   if (isSuccess) {
      return true; //alert('success');
   } else {
+    alert('bad login or/and password');
     return false;
   }
-  
-  alert('login: ' + email +  " password: " + password + " isSuccess: " + isSuccess);
 }
 
 // function that actualy saves the member
