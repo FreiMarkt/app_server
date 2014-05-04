@@ -20,6 +20,10 @@ function createTableHeader(oneObject) {
   headerLine = headerLine.concat('Delete');
   headerLine = headerLine.concat('</th>');
 
+  headerLine = headerLine.concat('<th>');
+  headerLine = headerLine.concat('Modify');
+  headerLine = headerLine.concat('</th>');
+  
   // close the header line
   headerLine = headerLine.concat('</tr>');
   return headerLine;
@@ -62,6 +66,10 @@ function deleteThis(memberid) {
   window.location.href = "admin_members.html";
 }
 
+function modifyThis(memberid) {
+  alert('not implemented');
+}
+
 /**
  * Puts every property's value of every object into a HTML table cell. 
  * @param arrayOfObjects
@@ -72,21 +80,26 @@ function fillRows(arrayOfObjects) {
         id;
 	// iterate through objects
 	for (var index in arrayOfObjects) {
-		table = table.concat('<tr>');
-		// iterate through properties of objects
-		for (var property in arrayOfObjects[index]) {
-            if ('memberid' == property) {
-              id = arrayOfObjects[index][property];
-            }
-			table = table.concat('<td>');
-			table = table.concat(arrayOfObjects[index][property]); 
-			table = table.concat('</td>');
-		}
-        // member delete button
-        table = table.concat('<td>');
-        table = table.concat('<button id='+ id + ' type="button" onclick="deleteThis(this.id)">Delete</button>');
-        table = table.concat('</td>');
-		table = table.concat('</tr>');
+      table = table.concat('<tr>');
+      // iterate through properties of objects
+      for (var property in arrayOfObjects[index]) {
+          if ('memberid' == property) {
+            id = arrayOfObjects[index][property];
+          }
+          table = table.concat('<td>');
+          table = table.concat(arrayOfObjects[index][property]); 
+          table = table.concat('</td>');
+      }
+      // member delete button
+      table = table.concat('<td>');
+      table = table.concat('<button id='+ id + ' type="button" onclick="deleteThis(this.id)">Delete</button>');
+      table = table.concat('</td>');
+
+      table = table.concat('<td>');
+      table = table.concat('<button id='+ id + ' type="button" onclick="modifyThis(this.id)">Modify</button>');
+      table = table.concat('</td>');
+
+      table = table.concat('</tr>');
 	}
 	return table;
 }
@@ -97,12 +110,18 @@ function fillRows(arrayOfObjects) {
 function makeTable() {
 	var object = getArrayOfMembers(); 
 
-	var table = '<table border="1">';
+	var table = '<table id="memberTable" border="1">';
 	table = table.concat(createTableHeader(object[0]));
 	table = table.concat(fillRows(object));
 	table = table.concat('</table>');
 	
 	var element = document.getElementById("thebutton");
+  
+//    alert(document.getElementById("memberTable"));
+    if (null != document.getElementById("memberTable")) {
+      var parent = document.getElementById("memberTable").parentNode;
+      parent.removeChild(document.getElementById("memberTable"));
+    }
 	element.insertAdjacentHTML("afterend", table);
 }
 
