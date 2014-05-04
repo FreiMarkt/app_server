@@ -11,10 +11,10 @@
         
         <link rel="stylesheet" type="text/css" href="css/style.css" />
         <link rel="stylesheet" type="text/css" href="css/styleradio.css" />
-         <link rel="stylesheet" type="text/css" href="style_datefield.css" />
+         <link rel="stylesheet" type="text/css" href="css/style_datefield.css" />
          <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,300&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
-        
+        <script src="js/logIn.js"></script>
 		<script src="js/modernizr.custom.63321.js"></script>
 		<!--[if lte IE 7]><style>.main{display:none;} .support-note .note-ie{display:block;}</style><![endif]-->
 		<style>
@@ -101,21 +101,21 @@
 
 			
 			<section class="main">
-				<form class="form-31">
+				<form class="form-31" onsubmit="return logIn()" method="get">
 				    <p class="clearfix">
-				    <label for="login" class="fixedwidth">Login</label>
-				   <input type="text" name="login" id="login" />
+				      <label for="login" class="fixedwidth">Login</label>
+				      <input type="text" name="login" id="superlogin" />
 				    </p>
 
 				    <p class="clearfix"> 
-				        <label for="password">Password</label>
-				        <input type="text" name="password" id="password" /> 
+				      <label for="password">Password</label>
+				      <input type="text" name="password" id="password" /> 
 				    </p>
 
 				    <p class="clearfix">
 						
-					<input type="submit" formaction="test1.html" name="submit" value="log in">
-				        
+					<input type="submit" formaction="intermediateLogin.html" name="submit" value="log in"/>
+<!--                    <input type="submit" formaction="log_in.html" name="submit" value="log in"  onclick="return logIn();"/>-->
 				    </p>  
 				    <a href="forget_password.html" >
 				</form>​

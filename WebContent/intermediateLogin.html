@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <script src="js/getURLParameters.js"></script>
+    <script>
+      
+      function getMemberByKey(member) {
+        var request = new XMLHttpRequest();
+        request.open("POST", "/rest_services/r/member/getByKey", false);
+        request.setRequestHeader("Content-type","application/json");
+        request.send(JSON.stringify(member));
+
+        return JSON.parse(request.responseText);
+      }
+      
+      function redirect() {
+        // take url parameters
+        var url = window.location.href;
+        // get rid of hostname
+        url = url.split('?')[1];
+        // get member id
+        
+        var urlParameters = getURLParameters();
+        var member = {
+          "email" : urlParameters['login'],
+          "ppassword" : urlParameters['password']
+        };
+        var allMember = getMemberByKey(member);
+        
+        var memberid = allMember['memberid'];
+        
+        // construct url with that member id
+        var newURL = 'make_offer.html?' + url + "&sessionid=" + memberid;
+        
+        window.location.href = newURL;
+//        alert(newURL);
+      }
+      
+      
+    </script>
+  </head>
+  <body>
+    <script>
+      redirect();
+    </script>
+  </body>
+</html>
