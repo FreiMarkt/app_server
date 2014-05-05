@@ -5,7 +5,6 @@ function getEmptyMember() {
   var member = {
     "firstname": "unknown",
 	"lastname": "unknown",
-	"username": "unknown",
 	"ppassword": "unknown",
 	"age": 0,
 	"gender": 'male',
