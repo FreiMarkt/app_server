@@ -186,14 +186,14 @@ body {
 		.tbix_footer {
 			width: 100vw; 
 			height: 30vh; 
-			padding-left: 10vw;			
+			padding-left: 17vw;			
 		}
 
 		.tbix_footer__item {
 			float: left; 
-			margin-left: 10px;
+			margin-left: 15px;
 			height: 100%; 			
-			width: 10vw;			
+			width: 15vw;			
 		}
 
 		.tbix_footer__item__first {
@@ -201,49 +201,21 @@ body {
 		}
 
 
-	#tfheader{
-		background-color:#c3dfef;
-	}
+	
 	#tfnewsearch{
 		float:right;
 		padding:20px;
 	}
 	.tftextinput{
 		margin: 0;
-		padding: 5px 15px;
+		padding: 10px 15px;
 		
 		font-size:14px;
-		border:1px solid #0076a3; border-right:0px;
-		border-top-left-radius: 5px 5px;
-		border-bottom-left-radius: 5px 5px;
-	}
-	.tfbutton {
-		margin: 0;
-		padding: 5px 15px;
+		border:2px solid #96c93c; 
+		border-radius: 5px 5px;
 		
-		font-size:14px;
-		outline: none;
-		cursor: pointer;
-		text-align: center;
-		text-decoration: none;
-		color: #ffffff;
-		border: solid 1px #0076a3; border-right:0px;
-		background: #0095cd;
-		background: -webkit-gradient(linear, left top, left bottom, from(#00adee), to(#0078a5));
-		background: -moz-linear-gradient(top,  #00adee,  #0078a5);
-		border-top-right-radius: 5px 5px;
-		border-bottom-right-radius: 5px 5px;
 	}
-	.tfbutton:hover {
-		text-decoration: none;
-		background: #007ead;
-		background: -webkit-gradient(linear, left top, left bottom, from(#0095cc), to(#00678e));
-		background: -moz-linear-gradient(top,  #0095cc,  #00678e);
-	}
-	/* Fixes submit button height problem in Firefox */
-	.tfbutton::-moz-focus-inner {
-	  border: 0;
-	}
+	
 	.tfclear{
 		clear:both;
 	}
@@ -277,7 +249,7 @@ body {
 		<div class="what">
 			<p>What are you looking for?</p>
 		</div>
-		<div style="height: 80px; padding-left: 10vw;">
+		<div style="height: 80px; padding-left: 25vw;">
 			<div style="height: 100%; float: left; position: relative; width: 10vw;">
 				<div style="position: absolute; bottom: 50%; margin-bottom: 6px;">
 					<input type="radio" id="r1" name="rr" value="services" checked="checked"/>
@@ -290,25 +262,26 @@ body {
 			</div>			
 			<div style="height: 100%; float: left; width: 5vw;">				
 			</div>
-			<div style="height: 100%; float: left; position: relative; width: 75vw;">
+			<div style="height: 100%; float: left; position: relative; width: 20vw;">
 
-				<div  style="float: left; top: 50%; margin-top: -22px;">
+				
 				
 
 
-	<div id="tfheader">
-		<form id="tfnewsearch" method="get" action="http://www.google.com">
-		        <input type="text" class="tftextinput" name="q" size="21" maxlength="120"><input type="submit" value="search" class="tfbutton">
+	
+		<form id="tfnewsearch" method="get" action="">
+		        <input type="text" class="tftextinput" name="q" size="30" maxlength="150" placeholder="specify category and city">
+
 		</form>
-	<div class="tfclear"></div>
-	</div>
+	    <div class="tfclear"></div>
+	
 
 
 
 				    
 				</div>
 				
-				<div style="float: left; position: relative; top: 50%; margin-top: -22px; margin-left: 10px; width: 150px; height: 44px; padding: 12px 5px; border-radius: 5px; background: #96c93c; text-align: center;" value="search" onclick="alert('Not implemented');">SEARCH</div>
+				<div style="float: left; position: relative; cursor: pointer; top: 50%; margin-top: -22px; margin-left: 10px; width: 150px; height: 44px; color: #ffffff; padding: 12px 5px; border-radius: 5px; background: #96c93c; text-align: center;" value="search" onclick="alert('Not implemented');">SEARCH</div>
 			</div>	
 		</div>		
 	</div>	
@@ -316,9 +289,9 @@ body {
 	<div class="tbix_footer">
 		<div class="tbix_footer__item tbix_footer__item__first">
 			<a href="about.html" style="height: 100%; width: 100%;">
-				<img src="images/about.png" style="position: relative; left: 50%; margin-left: -75px; "/>
-				<div style="font-size: 200%;">About Project </div>
-				<div>Everything you would like to know about time bank </div>
+				<img src="images/about.png" style="width: 100%;"/>
+				<div style="font-size: 200%; padding-left: 2vw;">About</div>
+				<div style="padding:2vw; width: 15vw;">Everything you would like to know about time bank </div>
 			</a>
 		</div>
 
@@ -326,26 +299,26 @@ body {
 
 		<div class="tbix_footer__item">
 			<a href="news.html" style="height: 100%; width: 100%;">
-				<img src="images/news.png" style="position: relative; left: 50%; margin-left: -75px; "/>
-				<div style="font-size: 200%;">News </div>
-				<div>Partecipate in time bank meetings and earn hours-credits </div>
+				<img src="images/news.png" style="width: 100%;"/>
+				<div style="font-size: 200%; padding-left: 3vw;">News </div>
+				<div style="padding:2vw; width: 15vw;">Partecipate in time bank meetings and earn hours-credits </div>
 			</a>
 		</div>
 
 
 		<div class="tbix_footer__item">
 			<a href="faq.html" style="height: 100%; width: 100%;">
-				<img src="images/faq.png" style="position: relative; left: 50%; margin-left: -75px;"/>
-				<div style="font-size: 200%;">FAQ </div>
-				<div>Here you will find all answers on your questions </div>
+				<img src="images/faq.png" style="width: 100%;"/>
+				<div style="font-size: 200%; padding-left: 4vw;">FAQ </div>
+				<div style="padding:2vw; width: 15vw;">Here you will find all answers on your questions </div>
 			</a>
 		</div>
 		
 		<div class="tbix_footer__item">
 			<a href="partners.html" style="height: 100%; width: 100%;">
-				<img src="images/partners.png" style="position: relative; left: 50%; margin-left: -75px;"/>
-				<div style="font-size: 200%;">Partners </div>
-				<div>Contacts of our partners </div>
+				<img src="images/partners.png" style="width: 100%;"/>
+				<div style="font-size: 200%; padding-left: 1vw;">Partners </div>
+				<div style="padding:2vw; width: 15vw;">Contacts of our partners </div>
 			</a>
 		</div>
 	

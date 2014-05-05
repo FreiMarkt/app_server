@@ -114,29 +114,31 @@
 				        <input type="text" name="lastname" id="lastname" placeholder="lastname"/> 
 				    </p>
 
-				    <div class="clearfix"> 
+				    <p class="clearfix" style="border: 1px dashed red;"> 
 				        <label for="day">Date of Birth </label>
 
-						<div id="date2" class="datefield" style="width: 50%;">
+						<div id="date2" class="datefield">
 					        <input id="day" type="tel" maxlength="2" placeholder="DD"/> /
 					        <input id="month" type="tel" maxlength="2" placeholder="MM"/> /
 					        <input id="year" type="tel" maxlength="4" placeholder="YYYY" />
 				    	</div>
-				    </div>
+				    </p>
 
-				    <div class="clearfix"> 
-				        <label for="day" style="width: 50%">Gender</label>				        				        
-				        <div style="float: left; margin-left: -10px; ">
+				    <p class="clearfix" > 
+				        <label for="day">Gender</label>
+
+				        <div style="position: absolute; bottom: 50%; margin-bottom: 6px; ">
 							<input type="radio" id="r1" name="rr" value="male" checked="checked"/>
-							<label for="r1"><span></span></label>
+							<label for="r1"><span></span>male</label>
 						</div>
-						<div style="float: left; line-height: 40px;">male</div>						
-						<div style="float: left;">
-							<input type="radio" id="r2" name="rr" value="female" />
-							<label for="r2"><span></span></label>							
-						</div>						
-						<div style="float: left; line-height: 40px;">female</div>						
-				    </div>
+
+						<div style="position: absolute; bottom: 50%; margin-bottom: 6px; left:70px;">
+							<p>
+								<input type="radio" id="r2" name="rr" value="female"/><label for="r2">
+								<span></span>female</label>
+							</p>
+						</div>
+				    </p>
 
 				    <p class="clearfix"> 
 				        <label for="phonenumber" class="fixedwidth">Phone number</label>
