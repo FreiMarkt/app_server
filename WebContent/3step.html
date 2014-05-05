@@ -76,6 +76,17 @@
 			}
 
 		</style>
+      <script src="js/checkConfirmationCode.js"></script>
+      <script>
+        function collectAndCheckConfirmationCode() {
+          var confirmationCode = document.getElementById("security_code").value;
+          var response = checkConfirmationCode(confirmationCode);
+          if (!response) {
+            alert('Wrong security code. Try once again.');
+          }
+          return response;
+        }
+      </script>
     </head>
     <body>
 
@@ -102,7 +113,7 @@
         <div align="center"><img src="images/3step.png"/></div>
 			
 			<section class="main">
-				<form class="form-3">
+				<form class="form-3" >
 				    <p class="clearfix">
 				    <div style="margin-bottom:20px;"><p>Soon you will get an SMS</br> with a security code</p></div>
 
@@ -114,7 +125,7 @@
 
 				    
 				    <p class="clearfix">
-				        <input type="submit" formaction="reg_completed.html" name="submit" value="complete registration">
+				        <input type="submit" formaction="reg_completed.html" name="submit" value="complete registration" onclick="return collectAndCheckConfirmationCode();">
 				    </p>       
 				</form>
 			</section>
