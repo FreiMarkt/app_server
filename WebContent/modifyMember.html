@@ -1,0 +1,76 @@
+<html>
+  <head>
+    <script src="js/getURLParameters.js"></script>
+    <script src="js/getMemberById.js"></script>
+    <script src="js/updateMember.js"></script>
+    <script>
+      // create html table
+      function makeMemberTable(member) {
+        var table = '<table id="memberTable" border="1">';
+        for (var property in member) {
+          if (member.hasOwnProperty(property)) {
+            table = table.concat('<tr>');
+            table = table.concat('<td>' + property + '</td>');
+            if ('memberid' == property) {
+              table = table.concat('<td id="' + property + '">' + member[property] + '</td>');
+            } else {
+              table = table.concat('<td>' + '<input  id="' + property + '"type="text" name="lastname" value="' + member[property] + '"></input></td>');
+            }
+            table = table.concat('</tr>');
+          }
+        }
+        return table.concat('</table>');
+      }
+      
+      // on button click collect values of fields and send them to the REST services.
+      function saveAll() {
+        var memberid = getURLParameters()['memberid'];
+        // store it in the temporary object
+        var memberobj = {
+          "memberid" : memberid
+        };
+        // get JSON of the member
+        var member = getMemberById(memberobj);
+        
+        var updatedMember = {};
+        for (var property in member) {
+          if (member.hasOwnProperty(property)) {
+            if ('memberid' == property) {
+              updatedMember[property] = document.getElementById(property).innerHTML;
+            } else {
+              updatedMember[property] = document.getElementById(property).value;
+            }
+          }
+        }
+        return updateMember(updatedMember);
+      }
+      // actions after clicking Save button
+      function saveModifications() {
+        saveAll();
+        window.location.href = "admin_members.html"; 
+      }
+    </script>  
+    
+  </head>
+  <body>
+    <button id="modifyButton" onclick="saveModifications();" >Save</button>
+    <script>
+      // -- take member ID from URL
+      var memberid = getURLParameters()['memberid'];
+      // store it in the temporary object
+      var memberobj = {
+        "memberid" : memberid
+      };
+      // get JSON of the member
+      var member = getMemberById(memberobj);
+      // make a table out of this member object
+      var memberTable = makeMemberTable(member);
+      // preview it
+      // -- table with two columns
+      // -- 1 -- what
+      // -- 2 -- old editable value
+      var element = document.getElementById('modifyButton');
+      element.insertAdjacentHTML("afterend", memberTable);
+    </script>
+  </body>
+</html>
