@@ -90,7 +90,7 @@
 
 				<div class="autorization">
 					<ul>
-						<li class="link" id="signin"><a href="1step.html">Sign in</a></li>
+						<li class="link" id="signup"><a href="1step.html">Sign up</a></li>
 						<li class="link" id="login"><a href="log_in.html">Log in</a></li>
 					</ul>
 				</div>
@@ -113,27 +113,29 @@
 				        <input type="text" name="lastname" id="lastname" placeholder="lastname"/> 
 				    </p>
 
-				    <p class="clearfix"> 
+				    <p class="clearfix" style="border: 1px dashed red;"> 
 				        <label for="day">Date of Birth </label>
 
 						<div id="date2" class="datefield">
-				        <input id="day" type="tel" maxlength="2" placeholder="DD"/> /
-				        <input id="month" type="tel" maxlength="2" placeholder="MM"/> /
-				        <input id="year" type="tel" maxlength="4" placeholder="YYYY" />
+					        <input id="day" type="tel" maxlength="2" placeholder="DD"/> /
+					        <input id="month" type="tel" maxlength="2" placeholder="MM"/> /
+					        <input id="year" type="tel" maxlength="4" placeholder="YYYY" />
 				    	</div>
 				    </p>
 
-				    <p class="clearfix"> 
+				    <p class="clearfix" > 
 				        <label for="day">Gender</label>
 
 				        <div style="position: absolute; bottom: 50%; margin-bottom: 6px; ">
-						<input type="radio" id="r1" name="rr" value="male" checked="checked"/>
-						<label for="r1"><span></span>male</label>
+							<input type="radio" id="r1" name="rr" value="male" checked="checked"/>
+							<label for="r1"><span></span>male</label>
 						</div>
 
 						<div style="position: absolute; bottom: 50%; margin-bottom: 6px; left:70px;">
-						<p><input type="radio" id="r2" name="rr" value="female"/><label for="r2"><span></span>female</label>
-						</p>
+							<p>
+								<input type="radio" id="r2" name="rr" value="female"/><label for="r2">
+								<span></span>female</label>
+							</p>
 						</div>
 				    </p>
 
