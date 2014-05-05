@@ -199,6 +199,57 @@ body {
 		.tbix_footer__item__first {
 			margin-left: 0;			
 		}
+
+
+	#tfheader{
+		background-color:#c3dfef;
+	}
+	#tfnewsearch{
+		float:right;
+		padding:20px;
+	}
+	.tftextinput{
+		margin: 0;
+		padding: 5px 15px;
+		
+		font-size:14px;
+		border:1px solid #0076a3; border-right:0px;
+		border-top-left-radius: 5px 5px;
+		border-bottom-left-radius: 5px 5px;
+	}
+	.tfbutton {
+		margin: 0;
+		padding: 5px 15px;
+		
+		font-size:14px;
+		outline: none;
+		cursor: pointer;
+		text-align: center;
+		text-decoration: none;
+		color: #ffffff;
+		border: solid 1px #0076a3; border-right:0px;
+		background: #0095cd;
+		background: -webkit-gradient(linear, left top, left bottom, from(#00adee), to(#0078a5));
+		background: -moz-linear-gradient(top,  #00adee,  #0078a5);
+		border-top-right-radius: 5px 5px;
+		border-bottom-right-radius: 5px 5px;
+	}
+	.tfbutton:hover {
+		text-decoration: none;
+		background: #007ead;
+		background: -webkit-gradient(linear, left top, left bottom, from(#0095cc), to(#00678e));
+		background: -moz-linear-gradient(top,  #0095cc,  #00678e);
+	}
+	/* Fixes submit button height problem in Firefox */
+	.tfbutton::-moz-focus-inner {
+	  border: 0;
+	}
+	.tfclear{
+		clear:both;
+	}
+
+
+
 	</style>
 
 </head>
@@ -214,7 +265,7 @@ body {
 
 		<div class="autorization">
 			<ul>
-				<li class="link" id="signin"><a href="1step.html">Sign in</a></li>
+				<li class="link" id="signup"><a href="1step.html">Sign up</a></li>
 				<li class="link" id="login"><a href="log_in.html">Log in</a></li>
 			</ul>
 		</div>
@@ -240,16 +291,21 @@ body {
 			<div style="height: 100%; float: left; width: 5vw;">				
 			</div>
 			<div style="height: 100%; float: left; position: relative; width: 75vw;">
-				<div id="dropDown1" class="tbix_dropdown" tabindex="1" style="float: left; top: 50%; margin-top: -22px;">category
-					<ul></ul>
-				</div>
 
-				<div id="dropDown2" class="tbix_dropdown" tabindex="1" style="margin-left: 10px; float: left; top: 50%; margin-top: -22px;">subcategory
-					<ul></ul>
-				</div>
+				<div  style="float: left; top: 50%; margin-top: -22px;">
+				
 
-				<div id="dropDown3" class="tbix_dropdown" tabindex="1" style="float: left; top: 50%; margin-top: -22px; margin-left: 10px; width: 150px;">city
-					<ul></ul>
+
+	<div id="tfheader">
+		<form id="tfnewsearch" method="get" action="http://www.google.com">
+		        <input type="text" class="tftextinput" name="q" size="21" maxlength="120"><input type="submit" value="search" class="tfbutton">
+		</form>
+	<div class="tfclear"></div>
+	</div>
+
+
+
+				    
 				</div>
 				
 				<div style="float: left; position: relative; top: 50%; margin-top: -22px; margin-left: 10px; width: 150px; height: 44px; padding: 12px 5px; border-radius: 5px; background: #96c93c; text-align: center;" value="search" onclick="alert('Not implemented');">SEARCH</div>
