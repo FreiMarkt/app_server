@@ -14,6 +14,8 @@
         
          <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,300&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
+        <script src="js/getURLParameters.js" type="application/javascript"></script>
+        <script src="js/checkSignUpData.js" type="application/javascript"></script>
         <script type="application/javascript" src="js/completeRegistration.js"></script>
 		<script src="js/modernizr.custom.63321.js"></script>
 		<!--[if lte IE 7]><style>.main{display:none;} .support-note .note-ie{display:block;}</style><![endif]-->
@@ -103,35 +105,28 @@
         <div align="center"><img src="images/2step.png"/></div>
 			
 			<section class="main">
-				<form class="form-3">
-				    <p class="clearfix">
-				    <label for="photo" class="fixedwidth">Upload your photo</label>
-
-				    </p>
-
-				    <div  id="FileUpload">
-				    <input type="file" size="24" id="BrowserHidden" onchange="getElementById('FileField').value = getElementById('BrowserHidden').value;" />
-
-				    <div id="BrowserVisible">
-				    <input type="text" id="FileField" />
-				    </div>
+				<form class="form-3" onsubmit="return checkSignUpDataStep2()">
 				    
+
+				    <div class="clearfix" id="FileUpload">
+                      <p class="clearfix">
+                        <label for="photo" class="fixedwidth">Upload your photo</label>
+                      </p>
+				      <input type="file" size="24" id="BrowserHidden" onchange="getElementById('FileField').value = getElementById('BrowserHidden').value;" />
+				      <div id="BrowserVisible">
+				        <input type="text" id="FileField" />
+				      </div>				    
 					</div>
-
+                  
 				    <p class="clearfix"> 
-				        <label for="email">Email</label>
-				        <input type="text" name="Email" id="Email" placeholder="e-mail"/> 
+				        <label for="email" class="fixedwidth">Email</label>
+				        <input type="email" name="Email" id="Email" placeholder="e-mail"/> 
 				    </p>
+				    <p><label>Tell us about yourself</label></p>
+				    <div class="clearfix">
+                      <textarea type="text" name="about" id="about" class="clearfix" cols="41" rows="8" placeholder="Describe yourself" maxlength="200" style="resize: none;"></textarea>
+                    <div>
 
-				    <p class="clearfix"> 
-				        <label for="about">Tell us about you </label>
-				        
-				    </p>
-
-				    <div style:"width:100px; height: 100px"><input type="text" name="about" id="about" placeholder="Here you can write about oour hobbies, skills to create a good impression about you"/><div>
-
-				    
-				    
 				    <p class="clearfix">
                         <input type="submit" formaction="3step.html" name="submit" value="register" onclick="return completeRegistration();">
 				    </p>       

@@ -145,6 +145,7 @@ a {
 }
 
 .form-3 input[type=text],
+.form-3 input[type=email],
 .form-3 input[type=password] {
     /* Size and position */
     width: 50%;

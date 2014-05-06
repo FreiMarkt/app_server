@@ -9,7 +9,7 @@ function getEmptyMember() {
 	"age": 0,
 	"gender": 'male',
 	"address": "unknown",
-	"city": "unknowm",
+	"city": "unknown",
 	"country": "unknown",
 	"email": "unknown",
 	"phonenumber": "unknown",
@@ -28,6 +28,7 @@ function setValues(member, params) {
   member["phonenumber"] = params["phonenumber"];
   member["ppassword"] = params["password"];
   member["address"] = params["residence"];
+  member["gender"] = params["rr"];
   member["email"] = document.getElementById("Email").value;
   return member;
 }

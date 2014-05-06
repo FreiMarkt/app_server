@@ -23,5 +23,7 @@
     color: #000;            
 }
 
-.datefield input#year { width:2.5em; }
+.datefield input#day { width:2.2em; }
+.datefield input#month { width:2.5em; }
+.datefield input#year { width:3.4em; }
 .datefield input:focus { outline:none; }

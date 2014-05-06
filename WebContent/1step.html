@@ -11,10 +11,11 @@
         
         <link rel="stylesheet" type="text/css" href="css/style.css" />
         <link rel="stylesheet" type="text/css" href="css/styleradio.css" />
-         <link rel="stylesheet" type="text/css" href="style_datefield.css" />
+         <link rel="stylesheet" type="text/css" href="css/style_datefield.css" />
          <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,300&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
-        
+        <script src="js/getURLParameters.js" type="application/javascript"></script>
+        <script src="js/checkSignUpData.js" type="application/javascript"></script>
 		<script src="js/modernizr.custom.63321.js"></script>
 		<!--[if lte IE 7]><style>.main{display:none;} .support-note .note-ie{display:block;}</style><![endif]-->
 		<style>
@@ -103,24 +104,24 @@
         <div align="center"><img src="images/1step.png"/></div>
 			
 			<section class="main">
-				<form class="form-3">
+				<form class="form-3" onsubmit="return checkSignUpDataStep1();">
 				    <p class="clearfix">
 				    <label for="name" class="fixedwidth">Name</label>
 				   <input type="text" name="name" id="name" placeholder="your name"/>
 				    </p>
 
 				    <p class="clearfix"> 
-				        <label for="password">Password</label>
+				        <label for="lastname">Lastname</label>
 				        <input type="text" name="lastname" id="lastname" placeholder="lastname"/> 
 				    </p>
 
 				    <div class="clearfix"> 
 				        <label for="day">Date of Birth </label>
 
-						<div id="date2" class="datefield" style="width: 50%;">
-					        <input id="day" type="tel" maxlength="2" placeholder="DD"/> /
-					        <input id="month" type="tel" maxlength="2" placeholder="MM"/> /
-					        <input id="year" type="tel" maxlength="4" placeholder="YYYY" />
+						<div id="date2" class="datefield" style="width: 60%;">
+					        <input id="day" type="tel" maxlength="2" placeholder="DD"/>
+					        <input id="month" type="tel" maxlength="2" placeholder="MM"/>
+					        <input id="year" type="tel" maxlength="4" placeholder="YYYY"/>
 				    	</div>
 				    </div>
 
@@ -155,12 +156,12 @@
 
 				    <p class="clearfix"> 
 				        <label for="password" class="fixedwidth">Password</label>
-				        <input type="text" name="password" id="password" placeholder="password"/>
+				        <input type="password" name="password" id="password" placeholder="password"/>
 				    </p>
 
 				    <p class="clearfix"> 
 				        <label for="repeatpassword" class="fixedwidth">Repeat password</label>
-				        <input type="text" name="repeatpassword" id="repeatpassword" placeholder="password"/>
+				        <input type="password" name="repeatpassword" id="repeatpassword" placeholder="password"/>
 				    </p>
 
 				    
