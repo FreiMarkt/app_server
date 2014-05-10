@@ -25,7 +25,7 @@ function getEmptyMember() {
 function setValues(member, params) {
   member["firstname"] = params["name"];
   member["lastname"] = params["lastname"];
-  member["phonenumber"] = params["phonenumber"];
+  member["phonenumber"] = params["phonenumber"].replace("%2B", "+");
   member["ppassword"] = params["password"];
   member["address"] = params["residence"];
   member["gender"] = params["rr"];
