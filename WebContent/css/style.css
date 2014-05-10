@@ -18,6 +18,19 @@ a {
     text-decoration: none;
 }
 
+.button1{
+    cursor: pointer; 
+
+    color: #ffffff; 
+    padding: 12px 5px; 
+    border-radius: 5px; 
+    background: #96c93c; 
+    text-align: center;
+    border: 1px solid #9ec421;
+   
+    text-shadow: 0 1px rgba(255,255,255,0.3);
+}
+
 .container {
     width: 100%;
     position: relative;
@@ -204,24 +217,25 @@ a {
   
     /* Styles */
     margin-left: 1%;
-    background: #fbd568; /* Fallback */
-    background: -moz-linear-gradient(#fbd568, #ffb347);
-    background: -ms-linear-gradient(#fbd568, #ffb347);
-    background: -o-linear-gradient(#fbd568, #ffb347);
-    background: -webkit-gradient(linear, 0 0, 0 100%, from(#fbd568), to(#ffb347));
-    background: -webkit-linear-gradient(#fbd568, #ffb347);
-    background: linear-gradient(#fbd568, #ffb347);
-    border: 1px solid #f4ab4c;
+    background: #ffffff; /* Fallback */
+    
+    border: 1px solid #9ec421;
+    border-radius: 5px;
     color: #996319;
     text-shadow: 0 1px rgba(255,255,255,0.3);
     cursor:pointer;
   
     /* Font styles */
     
-    color: white;
-    font-weight: 700;
-    font-size: 15px;
-    text-shadow: 0 -1px 0 rgba(0,0,0,0.8);
+    color: #9ec421;
+    font-weight: 400;
+    font-size: 18px;
+    
+}
+
+.form-3 input[type=submit]:hover { 
+    background: #9ec421;
+    color: #ffffff;
 }
 
 .form-3 input[type=submit]:hover { 
