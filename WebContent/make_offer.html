@@ -4,9 +4,7 @@
 		<meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <title>Registration</title>
-        <meta name="description" content="Custom Login Form Styling with CSS3" />
-        <meta name="keywords" content="css3, login, form, custom, input, submit, button, html5, placeholder" />
+        <title>Make an offer</title>
         
         
         <link rel="stylesheet" type="text/css" href="css/style.css" />
@@ -81,7 +79,7 @@
 	</script>
 
 		<style>
-			@import url(http://fonts.googleapis.com/css?family=Ubuntu:400,700);
+			
 			body {
 				background: #ffffff no-repeat center top;
 				-webkit-background-size: cover;
@@ -242,14 +240,14 @@
 		.tbix_footer {
 			width: 100vw; 
 			height: 30vh; 
-			padding-left: 10vw;			
+			padding-left: 20vw;			
 		}
 
 		.tbix_footer__item {
 			float: left; 
-			margin-left: 10px;
+			margin-left: 15px;
 			height: 100%; 			
-			width: 10vw;			
+			width: 15vw;			
 		}
 
 		.tbix_footer__item__first {
@@ -270,16 +268,16 @@
 				</div>
 
 				<div class="autorization">
-					<ul>
-						<li class="link" id="signup"><a href="1step.html">Sign up</a></li>
-						<li class="link" id="login"><a href="log_in.html">Log in</a></li>
-					</ul>
-				</div>
+        		<ul> 
+        		<li class="link" id="account"><a href="Myaccount.html">My account</a></li>
+       			<li class="link" id="logout"><a href="logout.html">Log out</a></li>
+        		 </ul>
+    			</div>
 		</div>
 
-		<div class="what" align="center">I want to offer</div>
-<div style="" align="center" >
-<div style="">
+		<div class="what" align="center" style="margin-bottom:20px; ">I want to offer</div>
+		<div style="" align="center" >
+		<div style="">
 					<input type="radio" id="r1" name="rr" value="services" checked="checked"/>
 					<label for="r1"><span></span>services</label>
 				</div>
@@ -294,59 +292,66 @@
         
 			
 			<section class="main">
-				<form class="form-31">
+				<form class="form-3" onsubmit="">
+				<div class="clearfix">
 				    <div style="margin-bottom:20px; width: 450px">
 					    <div style="float: left;">
 					    <label for="category" class="fixedwidth">Choose category</label>
 					    </div >
-					   
+				   
 					   <div id="dropDown1" class="tbix_dropdown" tabindex="1" style="float: left; ">category
 						<ul></ul>
 						</div>
 					</div>
+				</div>	
 
+				<div class="clearfix">
 				    <div style="margin-bottom:20px; width: 450px">
 				    <div style="float: left;">
 				        <label for="subcategory">Subcategory</label></div>
 				        <div id="dropDown2" class="tbix_dropdown" tabindex="1" style="margin-left: 10px; float: left; top: 50%; margin-top: -22px;">subcategory
 					<ul></ul>
-				</div>
-				</div>
-				    
+					</div>
+					</div>
+				</div> 
+
+				<div class="clearfix"> 
 				    <div>
 				    <div style="float: left;">
 				        <label for="city" class="fixedwidth">Choose city</label></div>
 				        <div id="dropDown3" class="tbix_dropdown" tabindex="1" style="float: left; top: 50%; margin-top: -22px; margin-left: 10px; width: 150px;">city
 					<ul></ul>
-				</div>
-				</div>
-
-				    
-					<div>
-				    <div  id="FileUpload">
-				    <input type="file" size="24" id="BrowserHidden" onchange="getElementById('FileField').value = getElementById('BrowserHidden').value;" />
-
-				    <div id="BrowserVisible">
-				    <input type="text" id="FileField" />
-				    </div>
-				    
 					</div>
 					</div>
+				</div>
 
-				    
+				<div class="clearfix">   
 					<div>
-				    <p class="clearfix"> 
-				        <label for="about">Tell us about you </label>
-				        
-				    </p>
+				    <p>Upload photo</p>
+   					<div id="FileUpload">
+   
+    				<input type="file" size="24" id="BrowserHidden" onchange="getElementById('FileField').value = getElementById('BrowserHidden').value;" />
+   					 <div id="BrowserVisible"><input type="text" id="FileField" /></div>
+					</div>
+				</div>
 
-				    <div style:"width:100px; height: 100px"><input type="text" name="about" id="Here you can write about oour hobbies, skills to create a good impression about you"/><div>
-				    </div>
+				<div class="clearfix"> 
+    				<div>
+   					<label for="descriptionoffer" class="">describe your good or service</label>
+    				<input type="text" name="descriptionoffer" id="descriptionoffer"/>
+   					</div>
+   				</div>
 
+   				<div class="clearfix"> 
+    				<div>
+   					 <label for="price" class="">price in hours credits</label>
+    				<input type="text" name="price" id="price"/>
+   					 </div>
+    			</div>
 				    
 				    
 				    <p class="clearfix">
-				        <input type="submit" formaction="3step.html" name="submit" value="register">
+				        <input type="submit" formaction="offer_done.html" name="submit" value="send offer" onclick="">
 				    </p> 
 				    
 
@@ -358,10 +363,10 @@
 
 		<div class="tbix_footer">
 				<div class="tbix_footer__item tbix_footer__item__first">
-					<a href="about.html" style="height: 100%; width: 100%;">
-				<img src="images/about.png" style="position: relative; left: 50%; margin-left: -75px; "/>
-				<div>About Project </div>
-				<div>Everything you would like to know about time bank </div>
+			<a href="about.html" style="height: 100%; width: 100%;">
+				<img src="images/about.png" style="width: 70%;"/>
+				<div style="font-size: 200%; padding-left: 2vw;">About</div>
+				<div style="padding:2vw; width: 15vw;">Everything you would like to know about time bank </div>
 			</a>
 		</div>
 
@@ -369,26 +374,26 @@
 
 		<div class="tbix_footer__item">
 			<a href="news.html" style="height: 100%; width: 100%;">
-				<img src="images/news.png" style="position: relative; left: 50%; margin-left: -75px; "/>
-				<div>News </div>
-				<div>Partecipate in time bank meetings and earn hours-credits </div>
+				<img src="images/news.png" style="width: 70%;"/>
+				<div style="font-size: 200%; padding-left: 3vw;">News </div>
+				<div style="padding:2vw; width: 15vw;">Partecipate in time bank meetings and earn hours-credits </div>
 			</a>
 		</div>
 
 
 		<div class="tbix_footer__item">
 			<a href="faq.html" style="height: 100%; width: 100%;">
-				<img src="images/faq.png" style="position: relative; left: 50%; margin-left: -75px;"/>
-				<div>FAQ </div>
-				<div>Here you will find all answers on your questions </div>
+				<img src="images/faq.png" style="width: 70%;"/>
+				<div style="font-size: 200%; padding-left: 4vw;">FAQ </div>
+				<div style="padding:2vw; width: 15vw;">Here you will find all answers on your questions </div>
 			</a>
 		</div>
 		
 		<div class="tbix_footer__item">
 			<a href="partners.html" style="height: 100%; width: 100%;">
-				<img src="images/partners.png" style="position: relative; left: 50%; margin-left: -75px;"/>
-				<div>Partners </div>
-				<div>Contacts of our partners </div>
+				<img src="images/partners.png" style="width: 70%;"/>
+				<div style="font-size: 200%; padding-left: 1vw;">Partners </div>
+				<div style="padding:2vw; width: 15vw;">Contacts of our partners </div>
 			</a>
 		</div>
 
