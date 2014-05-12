@@ -293,8 +293,10 @@
 			
 			<section class="main">
 				<form class="form-3" onsubmit="">
-				<div class="clearfix">
+				<div class="clearfix" >
+
 				    <div style="margin-bottom:20px; width: 450px">
+
 					    <div style="float: left;">
 					    <label for="category" class="fixedwidth">Choose category</label>
 					    </div >
@@ -325,26 +327,26 @@
 					</div>
 				</div>
 
-				<div class="clearfix">   
-					<div>
-				    <p>Upload photo</p>
-   					<div id="FileUpload">
-   
-    				<input type="file" size="24" id="BrowserHidden" onchange="getElementById('FileField').value = getElementById('BrowserHidden').value;" />
-   					 <div id="BrowserVisible"><input type="text" id="FileField" /></div>
-					</div>
+				<div class="clearfix" id="FileUpload">
+                      <p class="clearfix">
+                        <label for="photo" class="fixedwidth" style="margin-bottom:20px; width:300px;">Upload photo of good or service</label>
+                      </p>
+				      <input style="margin-left: 9px; margin-bottom: 20px;" type="file" size="24" id="BrowserHidden" onchange="getElementById('FileField').value = getElementById('BrowserHidden').value;" />
+				      <!--<div id="BrowserVisible">
+				        <input type="text" id="FileField" />
+				      </div>	-->			    
 				</div>
 
 				<div class="clearfix"> 
     				<div>
-   					<label for="descriptionoffer" class="">describe your good or service</label>
-    				<input type="text" name="descriptionoffer" id="descriptionoffer"/>
+   					<label for="descriptionoffer" class="fixedwidth">description</label>
+    				<textarea type="text" id="about" class="clearfix" cols="41" rows="8" name="descriptionoffer" id="descriptionoffer" placeholder="describe the good or srvice you want to offer"/></textarea>
    					</div>
    				</div>
 
    				<div class="clearfix"> 
     				<div>
-   					 <label for="price" class="">price in hours credits</label>
+   					 <label for="price" class="fixedwidth">price in hours credits</label>
     				<input type="text" name="price" id="price"/>
    					 </div>
     			</div>
