@@ -5,8 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
         <title>Registration</title>
-        <meta name="description" content="Custom Login Form Styling with CSS3" />
-        <meta name="keywords" content="css3, login, form, custom, input, submit, button, html5, placeholder" />
+        
         
         <link rel="stylesheet" type="text/css" href="css/style.css" />
         <link rel="stylesheet" type="text/css" href="css/styleradio.css" />
@@ -31,6 +30,9 @@
 			    color: #5b5b5b;
 
 			}
+			.come{
+    color: #ec6940;
+}
 			.container > header h1,
 			.container > header h2 {
 				color: #fff;
@@ -60,8 +62,8 @@
 			.tbix_footer {
 			width: 100vw; 
 			height: 30vh; 
-			padding-left: 20vw;	
-			padding-top: 8vw;		
+			padding-left: 18vw;	
+			padding-top: 3vw;		
 			}
 
 			.tbix_footer__item {
@@ -76,17 +78,6 @@
 			}
 
 		</style>
-      <script src="js/checkConfirmationCode.js"></script>
-      <script>
-        function collectAndCheckConfirmationCode() {
-          var confirmationCode = document.getElementById("security_code").value;
-          var response = checkConfirmationCode(confirmationCode);
-          if (!response) {
-            alert('Wrong security code. Try once again.');
-          }
-          return response;
-        }
-      </script>
     </head>
     <body>
 
@@ -101,44 +92,44 @@
 
 				<div class="autorization">
 					<ul>
-						<li class="link" id="signup"><a href="1step.html">Sign up</a></li>
+						<li class="link" id=""><a href="Myaccount.html">My account</a></li>
 						<li class="link" id="login"><a href="log_in.html">Log in</a></li>
 					</ul>
 				</div>
 		</div>
 
-<div class="logo" style="">
+		<div class="logo" style="">
 			<a href="index.html" style="">
 				<img src="images/tbix_logo2.png" style=""/>
 			</a>
 		</div>
+
+		<div class="what" align="center" style="margin-bottom:20px; font-size: 200%; ">I want to offer</div>
+
+		<div style="width:500px; height: 176px; border: 2px solid #96c93c; border-radius: 14px; margin-bottom: 10px; margin-left: 30vw;" >
+			<div style="float:left;">
+				<img id="photo_offer" src="images/photo.png" style="padding: 10px;"/>
+			</div>
+
+			<div style="float:left; margin-left:10px;">
+				<div id="subcategory" style="margin-bottom: 10px; margin-top: 20px;">subcategory</div>
+				<div id="city" style="margin-bottom: 10px;">city</div>
+				<div id="price" style="margin-bottom: 10px;">price</div>
+			</div>
+
+			<div style="float:left; margin-left:30px;">
+				<div id="description" style="margin-bottom: 10px; margin-top: 20px; width: 150px;">description</div>
+				<div class="button2" style="margin-top:20px;">
+					<input type="submit" formaction="person_account.html" name="submit" value="contact">
+				</div>
+			</div>
+
+		</div>
+
 		
-        <div class="container">
-
-        <div align="center"><img src="images/3step.png"/></div>
-			
-			<section class="main">
-				<form class="form-3" >
-				    <p class="clearfix">
-				    <div style="margin-bottom:20px;"><p>Soon you will get an SMS</br> with a security code</p></div>
-
-				    <div style="margin-bottom:20px;"><p>To confirm your registration</br> type the security code here</p></div>
-
-				    </p>
-
-				    <input type="text" name="security_code" id="security_code"/>
-
-				    
-				    <p class="clearfix">
-				        <input type="submit" formaction="reg_completed.html" name="submit" value="complete registration" onclick="return collectAndCheckConfirmationCode();">
-				    </p>       
-				</form>
-			</section>
-			
-        </div>
 
 		<div class="tbix_footer">
-				<div class="tbix_footer__item tbix_footer__item__first">
+		<div class="tbix_footer__item tbix_footer__item__first">
 			<a href="about.html" style="height: 100%; width: 100%;">
 				<img src="images/about.png" style="width: 70%;"/>
 				<div style="font-size: 200%; padding-left: 2vw;">About</div>

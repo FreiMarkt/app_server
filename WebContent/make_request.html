@@ -285,7 +285,7 @@
 			</a>
 		</div>
 
-		<div class="what" align="center" style="margin-bottom:20px; font-size: 200%; ">I want to offer</div>
+		<div class="what" align="center" style="margin-bottom:20px; font-size: 200%; ">Not yet on the list</div>
 		<div style="" align="center" >
 		<div style="">
 					<input type="radio" id="r1" name="rr" value="services" checked="checked"/>
@@ -342,22 +342,27 @@
 
 				<div class="clearfix"> 
     				<div>
-   					<label for="descriptionoffer" class="fixedwidth">description</label>
-    				<textarea type="text" id="about" class="clearfix" cols="41" rows="8" name="descriptionoffer" id="descriptionoffer" placeholder="describe the good or service you want to offer"/></textarea>
+   					<label for="descriptionrequest" class="fixedwidth">description</label>
+    				<textarea type="text" id="about" class="clearfix" cols="41" rows="8" name="descriptionrequest" id="descriptionrequest" placeholder="describe good or service you want somebody to offer you"/></textarea>
    					</div>
    				</div>
 
-   				<div class="clearfix"> 
-    				<div>
-   					 <label for="price" class="fixedwidth">price in hours credits</label>
-    				<input type="text" name="price" id="price"/>
-   					 </div>
-    			</div>
+   				
 				    
 				    
 				    <p class="clearfix">
-				        <input type="submit" formaction="offer_done.html" name="submit" value="send offer" onclick="">
+				        <input type="submit" formaction="request_done.html" name="submit" value="send request" onclick="">
 				    </p> 
+				    <script> 
+					var myButton = document.getElementById("clickButton");
+					var myText = document.getElementById("helloText");
+
+					myButton.addEventListener('click', doSomething, false)
+
+					function doSomething() {
+						myText.textContent = "hello, world!";
+					}
+					</script>
 				    
 
     
