@@ -88,7 +88,7 @@ body {
 			padding: 12px 15px;
 			background: #fff;
 			border-radius: 5px;
-			box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+			/*box-shadow: 0 1px 0 rgba(0,0,0,0.2);*/
 			cursor: pointer;
 			outline: none;
 			-webkit-transition: all 0.3s ease-out;
@@ -96,6 +96,7 @@ body {
 			-ms-transition: all 0.3s ease-out;
 			-o-transition: all 0.3s ease-out;
 			transition: all 0.3s ease-out;
+			border: 1px solid #96c93c;
 		}
 		.tbix_dropdown:after { /* Little arrow */
 			content: "";
@@ -107,7 +108,7 @@ body {
 			margin-top: -3px;
 			border-width: 6px 6px 0 6px;
 			border-style: solid;
-			border-color: #4cbeff transparent;
+			border-color: #96c93c transparent;
 		}
 
 		.tbix_dropdown > ul {
@@ -168,14 +169,14 @@ body {
 
 		.tbix_dropdown.active {
 			border-radius: 5px 5px 0 0;
-			background: #4cbeff;
+			background: #96c93c;
 			box-shadow: none;
 			border-bottom: none;
 			color: white;
 		}
 
 		.tbix_dropdown.active:after {
-			border-color: #82d1ff transparent;
+			border-color: #96c93c transparent;	
 		}
 
 		.tbix_dropdown.active > ul {
@@ -254,24 +255,26 @@ body {
 				
 				<div class="button1" style="float: left; position: relative; cursor: pointer; top: 50%; margin-top: -22px; margin-left: 10px; width: 150px; height: 44px; color: #ffffff; padding: 12px 5px; border-radius: 5px; background: #96c93c; text-align: center;" value="search" onclick="alert('Not implemented');">SEARCH</div>
 			</div>	
-
-
-				
-			
-			<div>
-			<img src="images/or.png" style="width: 15%;  margin-left:30vw; margin-top: 30px;"/>
-		
-			<div>
-			<a href="make_offer.html" style="height: 100%; width: 100%;">
-			<img src="images/offer3.png" style="width: 45%; margin-left:12vw; margin-top: 30px;"/></a>
-			</div>
-
 		</div>
 	</div>
 
 		</div>		
 	</div>	
-
+	<div style="width: 100%;">	
+		<div style="width: 100%; text-align: center;">
+			<img src="images/or.png"/>					
+		</div>			
+		<div style="width: 100%; display: flex; flex-direction: row;">
+			<div style="width: 50%; padding: 20px; padding-right: 50px;">
+				<a href="make_offer.html" style="float: right;">
+					<img src="images/faq.png" />
+				</a>		
+			</div>
+			<div style="position: relative; width: 50%; padding: 20px;">
+				<span style="font-size: 200%; position: absolute; top: 50%; line-height: 0;">offer your content</span>
+			</div>
+		</div>
+	</div>
 	<div class="tbix_footer">
 		<div class="tbix_footer__item tbix_footer__item__first">
 			<a href="about.html" style="height: 100%; width: 100%;">

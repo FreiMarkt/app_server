@@ -242,19 +242,20 @@
 		.tbix_footer {
 			width: 100vw; 
 			height: 30vh; 
-			padding-left: 10vw;			
-		}
+			padding-left: 20vw;	
+			padding-top: 8vw;		
+			}
 
-		.tbix_footer__item {
-			float: left; 
-			margin-left: 10px;
-			height: 100%; 			
-			width: 10vw;			
-		}
+			.tbix_footer__item {
+				float: left; 
+				margin-left: 15px;
+				height: 100%; 			
+				width: 15vw;			
+			}
 
-		.tbix_footer__item__first {
-			margin-left: 0;			
-		}
+			.tbix_footer__item__first {
+				margin-left: 0;			
+			}
 
 .form-31 {
     
@@ -299,79 +300,93 @@
 				</div>
 		</div>
 
-		<div class="what" align="center">Your account</div>
+		<div style="">
+
+		<div class="what" style="margin-bottom: 10px; font-size: 200%; margin-left: 15vw;" >My account</div>
 
 
-<div style="margin-left: 400px;">
+<div style="margin-left: 10vw;">
     <div style="float: left; margin: 30px;" class="photoprofile" > 
-    	<img src=""/>
-	    <div class="credits"> 
-	    credits
+    	<img src="images/photo.png"/>
+	    <div id="credits" style="margin-left: 40px;"> 
+	    0 credits
 	    </div>
     </div>
     
     
-<div style="float: left; margin: 30px;" class="inf1"> 
-    <div> 
+<div style="float: left; margin: 30px; margin-right: 50px;" class="inf1"> 
+    <div id="name"> 
     Name
     </div>
     
-    <div> 
+    <div id="lastname"> 
     Last name
     </div>
     
-    <div> 
+    <div id="dateofbirth"> 
     Date of birth
     </div>
     
-    <div> 
+    <div id="gender"> 
     Gender
     </div>
     
-    <div> 
+    <div id="phonenumber"> 
     Phone number
     </div>
     
-    <div> 
+    <div id="residence"> 
     Residence
     </div>
 
-	<div> 
+	<div id="inform"  style="width: 140px;"> 
     Information about your skills, interests
     </div>
+    <div class="button2" style="margin-top:30px;">
+	<input type="submit" formaction="1step.html" name="submit" value="edit">
+	</div>
+
 </div>  
 </div>
-    
-
-
-
-        <div class="container">
-
         
-			
-			<section class="main">
-				<form class="form-3">
-				   
-				    <p class="clearfix">
-				        <input type="submit" formaction="3step.html" name="submit" value="edit">
-				    </p> 
-				    
-				</form>​
-			</section>
-			
-        </div>
+		
+		<div class="what" style="margin-bottom: 10px; font-size: 200%; margin-left: 15vw;" >Last transactions</div>	
 
+<div style=" width: 40vw; float:left">
+<div id="line" style="margin-bottom: 10px; border-bottom: 1px solid #ec6940">
+<div id="date">01.01.01</div>
+<div id="subcategory">subcategory</div>
+<div id="price">price</div>
+<div id="name">name</div>
+<div id="lastname" style="margin-bottom: 10px;">lastname</div>
+</div>
+</div>
 
-        <div>
-    <p>Last transactions</p>
-    </div>
+<div class="tbix_footer__item">
+			<a href="sharehours.html" style="height: 100%; width: 100%;">
+				<img src="images/share.png" style="width: 70%;"/>
+				<div style="font-size: 200%; padding-left: 1vw;">Share hours</div>
+				<div style="padding:2vw; width: 15vw;">Share your hour-credits with your frends!</div>
+			</a>
+		</div>
 
-		<div class="tbix_footer">
-				<div class="tbix_footer__item tbix_footer__item__first">
-					<a href="about.html" style="height: 100%; width: 100%;">
-				<img src="images/about.png" style="position: relative; left: 50%; margin-left: -75px; "/>
-				<div>About Project </div>
-				<div>Everything you would like to know about time bank </div>
+		<div class="tbix_footer__item">
+			<a href="feedback.html" style="height: 100%; width: 100%;">
+				<img src="images/help1.png" style="width: 70%;"/>
+				<div style="font-size: 200%; padding-left: 1vw;">Call helper</div>
+				<div style="padding:2vw; width: 15vw;">Do you have something to say? Leave your feedback!</div>
+			</a>
+		</div>
+
+				</div>	
+		
+
+		<div class="tbix_footer" style="">
+					<div class="tbix_footer__item tbix_footer__item__first">
+			<a href="about.html" style="height: 100%; width: 100%;">
+				<img src="images/about.png" style="width: 70%;"/>
+				<div style="font-size: 200%; padding-left: 2vw;">About</div>
+				<div style="padding:2vw; width: 15vw;">Everything you would like to know about time bank </div>
 			</a>
 		</div>
 
@@ -379,44 +394,30 @@
 
 		<div class="tbix_footer__item">
 			<a href="news.html" style="height: 100%; width: 100%;">
-				<img src="images/news.png" style="position: relative; left: 50%; margin-left: -75px; "/>
-				<div>News </div>
-				<div>Partecipate in time bank meetings and earn hours-credits </div>
+				<img src="images/news.png" style="width: 70%;"/>
+				<div style="font-size: 200%; padding-left: 3vw;">News </div>
+				<div style="padding:2vw; width: 15vw;">Partecipate in time bank meetings and earn hours-credits </div>
 			</a>
 		</div>
 
 
 		<div class="tbix_footer__item">
 			<a href="faq.html" style="height: 100%; width: 100%;">
-				<img src="images/faq.png" style="position: relative; left: 50%; margin-left: -75px;"/>
-				<div>FAQ </div>
-				<div>Here you will find all answers on your questions </div>
+				<img src="images/faq.png" style="width: 70%;"/>
+				<div style="font-size: 200%; padding-left: 4vw;">FAQ </div>
+				<div style="padding:2vw; width: 15vw;">Here you will find all answers on your questions </div>
 			</a>
 		</div>
 		
 		<div class="tbix_footer__item">
 			<a href="partners.html" style="height: 100%; width: 100%;">
-				<img src="images/partners.png" style="position: relative; left: 50%; margin-left: -75px;"/>
-				<div>Partners </div>
-				<div>Contacts of our partners </div>
+				<img src="images/partners.png" style="width: 70%;"/>
+				<div style="font-size: 200%; padding-left: 1vw;">Partners </div>
+				<div style="padding:2vw; width: 15vw;">Contacts of our partners </div>
 			</a>
 		</div>
 
-		<div class="tbix_footer__item">
-			<a href="sharehours.html" style="height: 100%; width: 100%;">
-				<img src="images/partners.png" style="position: relative; left: 50%; margin-left: -75px;"/>
-				<div>Share hours</div>
-				<div>Share your hour-credits with your frends!</div>
-			</a>
-		</div>
-
-		<div class="tbix_footer__item">
-			<a href="feedback.html" style="height: 100%; width: 100%;">
-				<img src="images/partners.png" style="position: relative; left: 50%; margin-left: -75px;"/>
-				<div>Call helper</div>
-				<div>Do you have something to say? Leave your feedback!</div>
-			</a>
-		</div>
+		
 
 
 
