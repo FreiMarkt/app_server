@@ -12,7 +12,7 @@
          <link rel="stylesheet" type="text/css" href="css/style_datefield.css" />
          <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,300&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
-        
+        <script src="js/registerOffer.js"></script>
 		<script src="js/modernizr.custom.63321.js"></script>
 		<!--[if lte IE 7]><style>.main{display:none;} .support-note .note-ie{display:block;}</style><![endif]-->
 
@@ -38,17 +38,45 @@
 				'baby23': {}
 			}
 		};
-		var onDropDownSelect1 = function(key) {					
-			var dropDown2 = new DropDown( $('#dropDown2'), dropDownData[key] );
+      
+      var cities = {
+        "Bolzano": "",
+        "Merano": ""
+      };
+      
+		var onDropDownSelect1 = function(key, id) {	
+          if ('dropDown1' === id) {
+            var category = document.getElementById("dropDown1").innerHTML;
+            var oldCategoryName = category.split('<ul>')[0];
+            var remainingPart = '<ul>' + category.split('<ul>')[1];
+            var newCategory = key + remainingPart;
+            document.getElementById("dropDown1").innerHTML = newCategory;
+            console.log(dropDownData[key]);
+            var dropDown2 = new DropDown( $('#dropDown2'), dropDownData[key] );
+          } else if ('dropDown2' === id) {
+            var category = document.getElementById("dropDown2").innerHTML;
+            var oldCategoryName = category.split('<ul>')[0];
+            var remainingPart = '<ul>' + category.split('<ul>')[1];
+            var newCategory = key + remainingPart;
+            document.getElementById("dropDown2").innerHTML = newCategory;
+          } else if ('dropDown3' === id) {
+            var category = document.getElementById("dropDown3").innerHTML;
+            var oldCategoryName = category.split('<ul>')[0];
+            var remainingPart = '<ul>' + category.split('<ul>')[1];
+            var newCategory = key + remainingPart;
+            document.getElementById("dropDown3").innerHTML = newCategory;
+          }
+          
 		}
 
 		function DropDown(el, items) {
+          var id = el.attr('id');
 			this.dd = el;
 			this.items = items;
 			el.children('ul').empty();
 			if (items) {
 				for (var key in items) {							
-					el.children('ul').append('<li><a href="#" onclick="onDropDownSelect1(\''+key+'\');">' + key+ '</a></li>');
+					el.children('ul').append('<li><a href="#" onclick="onDropDownSelect1(\''+key+'\', \''+ id + '\');">' + key+ '</a></li>');
 				};	
 			}
 
@@ -65,8 +93,8 @@
 		}
 
 		$(function() {
-
-			var dropDown1 = new DropDown( $('#dropDown1'), dropDownData);
+		  var dropDown1 = new DropDown( $('#dropDown1'), dropDownData);
+          var dropDown3 = new DropDown( $('#dropDown3'), cities);
 
 
 			$(document).click(function() {
@@ -187,8 +215,8 @@
 			-ms-transition: all 0.3s ease-out;
 			-o-transition: all 0.3s ease-out;
 			transition: all 0.3s ease-out;
-
-			/* Hiding */
+          
+            /* Hiding */
 			max-height: 0;
 			overflow: hidden;
 		}
@@ -204,6 +232,7 @@
 			padding: 10px 0;
 			transition: all 0.3s ease-out;
 			border-bottom: 1px solid #e6e8ea;
+          
 		}
 
 		.tbix_dropdown > ul > li:last-of-type a {
@@ -230,6 +259,7 @@
 			box-shadow: none;
 			border-bottom: none;
 			color: white;
+            z-index:1;
 		}
 
 		.tbix_dropdown.active:after {
@@ -308,24 +338,21 @@
 				    		<div style="position: relative; width: 150px" >
 					    		<label for="category"  style="position: absolute; top: 50%; line-height: 0; width: 100%; float: none; padding: 0;">Choose category</label>
 					    	</div>
-							<div id="dropDown1" class="tbix_dropdown" tabindex="1">category
-								<ul></ul>
+							<div id="dropDown1" class="tbix_dropdown" tabindex="1">category<ul></ul>
 							</div>				
 						</div>	
 						<div style="margin-bottom:20px; width: 100%; display: flex; flex-direction: row;">
 				    		<div style="position: relative; width: 150px" >
 					    		<label for="subcategory"  style="position: absolute; top: 50%; line-height: 0; width: 100%; float: none; padding: 0;">Subcategory</label>
 					    	</div>
-							<div id="dropDown2" class="tbix_dropdown" tabindex="1">subcategory
-								<ul></ul>
+							<div id="dropDown2" class="tbix_dropdown" tabindex="1">subcategory<ul></ul>
 							</div>				
 						</div>	
 						<div style="margin-bottom:20px; width: 100%; display: flex; flex-direction: row;">
 				    		<div style="position: relative; width: 150px" >
 					    		<label for="city"  style="position: absolute; top: 50%; line-height: 0; width: 100%; float: none; padding: 0;">Choose city</label>
 					    	</div>
-							<div id="dropDown3" class="tbix_dropdown" tabindex="1">city
-								<ul></ul>
+							<div id="dropDown3" class="tbix_dropdown" tabindex="1">city<ul></ul>
 							</div>				
 						</div>	
 
@@ -356,7 +383,7 @@
 				    
 				    
 				    <p class="clearfix">
-				        <input type="submit" formaction="offer_done.html" name="submit" value="send offer" onclick="">
+				        <input type="submit" formaction="offer_done.html" name="submit" value="send offer" onclick="return registerOffer();">
 				    </p> 
 				    
 
