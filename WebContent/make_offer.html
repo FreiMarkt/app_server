@@ -51,7 +51,7 @@
             var remainingPart = '<ul>' + category.split('<ul>')[1];
             var newCategory = key + remainingPart;
             document.getElementById("dropDown1").innerHTML = newCategory;
-            console.log(dropDownData[key]);
+//            console.log(dropDownData[key]);
             var dropDown2 = new DropDown( $('#dropDown2'), dropDownData[key] );
           } else if ('dropDown2' === id) {
             var category = document.getElementById("dropDown2").innerHTML;
