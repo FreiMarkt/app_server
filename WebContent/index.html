@@ -14,6 +14,7 @@
 	<link rel="stylesheet" type="text/css" href="css/styleradio.css" />
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,300&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
+    <script src="js/collectValuesForSearch.js"></script>
 	<script type="text/javascript" src="js/modernizr.custom.79639.js"></script> 
 	<noscript><link rel="stylesheet" type="text/css" href="css/noJS.css" /></noscript>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
@@ -36,17 +37,45 @@
 				'baby23': {}
 			}
 		};
-		var onDropDownSelect1 = function(key) {					
-			var dropDown2 = new DropDown( $('#dropDown2'), dropDownData[key] );
+      
+      var cities = {
+        "Bolzano": "",
+        "Merano": ""
+      };
+      
+		var onDropDownSelect1 = function(key, id) {	
+          if ('dropDown1' === id) {
+            var category = document.getElementById("dropDown1").innerHTML;
+            var oldCategoryName = category.split('<ul>')[0];
+            var remainingPart = '<ul>' + category.split('<ul>')[1];
+            var newCategory = key + remainingPart;
+            document.getElementById("dropDown1").innerHTML = newCategory;
+            console.log(dropDownData[key]);
+            var dropDown2 = new DropDown( $('#dropDown2'), dropDownData[key] );
+          } else if ('dropDown2' === id) {
+            var category = document.getElementById("dropDown2").innerHTML;
+            var oldCategoryName = category.split('<ul>')[0];
+            var remainingPart = '<ul>' + category.split('<ul>')[1];
+            var newCategory = key + remainingPart;
+            document.getElementById("dropDown2").innerHTML = newCategory;
+          } else if ('dropDown3' === id) {
+            var category = document.getElementById("dropDown3").innerHTML;
+            var oldCategoryName = category.split('<ul>')[0];
+            var remainingPart = '<ul>' + category.split('<ul>')[1];
+            var newCategory = key + remainingPart;
+            document.getElementById("dropDown3").innerHTML = newCategory;
+          }
+          
 		}
 
 		function DropDown(el, items) {
+          var id = el.attr('id');
 			this.dd = el;
 			this.items = items;
 			el.children('ul').empty();
 			if (items) {
 				for (var key in items) {							
-					el.children('ul').append('<li><a href="#" onclick="onDropDownSelect1(\''+key+'\');">' + key+ '</a></li>');
+					el.children('ul').append('<li><a href="#" onclick="onDropDownSelect1(\''+key+'\', \''+ id + '\');">' + key+ '</a></li>');
 				};	
 			}
 
@@ -63,8 +92,8 @@
 		}
 
 		$(function() {
-
-			var dropDown1 = new DropDown( $('#dropDown1'), dropDownData);
+		  var dropDown1 = new DropDown( $('#dropDown1'), dropDownData);
+          var dropDown3 = new DropDown( $('#dropDown3'), cities);
 
 
 			$(document).click(function() {
@@ -247,26 +276,24 @@ body {
 					<label for="r1"><span></span>services</label>
 				</div>
 				<div style="position: absolute; top: 50%; margin-top: 6px;">
-					<p><input type="radio" id="r2" name="rr" value="goods"/><label for="r2"><span></span>goods</label>
+					<p><input type="radio" id="r2" name="rr" value="goods"/>
+                      <label for="r2"><span></span>goods</label>
 					</p>
 				</div>
 			</div>			
 			<div style="height: 100%; float: left; width: 5vw;">				
 			</div>
 			<div style="height: 100%; float: left; position: relative; width: 75vw;">
-				<div id="dropDown1" class="tbix_dropdown" tabindex="1" style="float: left; top: 50%; margin-top: -22px;">category
-					<ul></ul>
+				<div id="dropDown1" class="tbix_dropdown" tabindex="1" style="float: left; top: 50%; margin-top: -22px;">category<ul></ul>
 				</div>
 
-				<div id="dropDown2" class="tbix_dropdown" tabindex="1" style="margin-left: 10px; float: left; top: 50%; margin-top: -22px;">subcategory
-					<ul></ul>
+				<div id="dropDown2" class="tbix_dropdown" tabindex="1" style="margin-left: 10px; float: left; top: 50%; margin-top: -22px;">subcategory<ul></ul>
 				</div>
 
-				<div id="dropDown3" class="tbix_dropdown" tabindex="1" style="float: left; top: 50%; margin-top: -22px; margin-left: 10px; width: 150px;">city
-					<ul></ul>
+				<div id="dropDown3" class="tbix_dropdown" tabindex="1" style="float: left; top: 50%; margin-top: -22px; margin-left: 10px; width: 150px;">city<ul></ul>
 				</div>
 				
-				<div class="button1" style="float: left; position: relative; cursor: pointer; top: 50%; margin-top: -22px; margin-left: 10px; width: 150px; height: 44px; color: #ffffff; padding: 12px 5px; border-radius: 5px; background: #96c93c; text-align: center;" value="search" onclick="alert('Not implemented');">SEARCH</div>
+				<div class="button1" style="float: left; position: relative; cursor: pointer; top: 50%; margin-top: -22px; margin-left: 10px; width: 150px; height: 44px; color: #ffffff; padding: 12px 5px; border-radius: 5px; background: #96c93c; text-align: center;" value="search" onclick="collectValuesForSearch();">SEARCH</div>
 			</div>	
 		</div>
 	</div>
