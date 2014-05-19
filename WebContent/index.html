@@ -19,28 +19,164 @@
 	<noscript><link rel="stylesheet" type="text/css" href="css/noJS.css" /></noscript>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	<script type="text/javascript">
-
-		var dropDownData = {
-			'baby': {
-				'baby1': {}, 
-				'baby2': {},
-				'baby3': {}
-			},
-			'baby1': {
-				'baby11': {}, 
-				'baby12': {},
-				'baby13': {}
-			},
-			'baby2': {
-				'baby21': {}, 
-				'baby22': {},
-				'baby23': {}
-			}
-		};
+		var goodsDropdownData = {
+          'Kids': {
+            'Toys and Games': {},
+            'Strollers, Car-Seats': {},
+            'Clothings': {},
+            'Books and Music': {},
+            'Bikes, Rollers': {}
+          },
+          'Adults': {
+            'Books & Audible': {},
+            'Clothings': {},
+            'Games': {},
+            'Bikes': {}
+          },
+          'Clothing': {
+            'Clothing': {},
+            'Shoes': {},
+            'Jewelery': {}
+          },
+          'Food': {
+            'Caterings': {},
+            'Vegetables': {},
+            'Others': {}
+          },
+          'Leisure': {
+            'Music': {},
+            'Games': {},
+            'Movies': {},
+            'books': {}
+          },
+          'Electronics': {
+            'computers': {},
+            'mobile phones': {},
+            'electronic devices': {}
+          },
+          'Home, Garden & Tools': {
+            'Kitchen & Dining': {},
+            'Furniture & Décor': {},
+            'Appliances': {},
+            'Patio, Lawn & Garden': {},
+            'Fine Arts': {},
+            'Arts, Crafts & Sewing': {},
+            'Pet supply': {},
+            'Power and Hand Tools': {}
+          },
+          'Beauty & Health': {
+            'Women': {},
+            'Men': {}
+          },
+          'Sports & Outdoors': {
+            'Outdoor Gear': {},
+            'Cycling': {},
+            'winter sports': {},
+            'joga': {},
+            'gymnastic': {}
+          },
+          'Automotive': {
+            'Parts & Accessories': {},
+            'Tools & Equipment': {},
+            'Tires & Wheels': {},
+            'Motorcycle & Powersports': {}
+          },
+          'Industrial & Scientific': {
+            'Industrial Supplies': {},
+            'Lab & Scientific': {},
+            'Janitorial': {},
+            'Safety': {}
+          }
+        };
+      
+      var servicesDropDownData = {
+        'kids': {
+          'babysitting': {},
+          'animation for birthday parties': {},
+          'playing groups': {}
+        },
+        'students': {
+          'homework support': {},
+          'study-groups': {}
+        },
+        'elders': {
+          'accompanying': {},
+          'shopping support': {},
+          'burocracy-support': {},
+          'technology support': {}
+        },
+        'languages': {
+          'language courses': {},
+          'conversation courses': {},
+          'learning by doing': {},
+          'translations': {}
+        },
+        'In and Around the House': {
+          'Household support': {},
+          'Shopping support': {},
+          'Cooking': {},
+          'Gardening': {}
+        },
+        'Handcrafts & Technology': {
+          'Mechanic': {},
+          'Taylor': {},
+          'Electrician': {},
+          'Devices repairing': {},
+          'Painting': {}
+        },
+        'Hobbies & Sport': {
+          'art crafts': {},
+          'personal training': {}
+        },
+        'Bureaucracy': {
+          'CV-writing-support': {},
+          'job-search support': {},
+          'apartment-search support': {},
+          'accompanying to offices': {}
+        },
+        'Food': {
+          'Cooking Courses': {},
+          'Catering-Service': {}
+        },
+        'T-BiX support': {
+          'help in signing up': {},
+          'help in upgrading profile': {}
+        },
+        'New Media': {
+          'how to use your smartphone': {},
+          'internet support': {}
+        },
+        'Animals': {
+          'pet-sitting': {},
+          'veterinary help': {}
+        },
+        'Transport': {
+          'Taxi-Service': {},
+          'freight transportation': {},
+          'car-sharing': {}
+        }
+      };
+      
+      var dropDownData = servicesDropDownData;
       
       var cities = {
-        "Bolzano": "",
-        "Merano": ""
+        "Bolzano and Surroundings": "",
+        "L’Oltradige and Surroundings": "",
+        "Valley of d’Isarco": "",
+        "Valley of bassa Pusteria": "",
+        "Valley of Gardena and Castelrotto": "",
+        "Valley of alta Pusteria": "",
+        "Lana and Surroundings": "",
+        "Merano and Surroundings": "",
+        "(Valley of) media Venosta": "",
+        "Valley of media Pusteria": "",
+        "(Valley of) alta Venost": "",
+        "Valley of Passiria": "",
+        "Valley of Aurina": "",
+        "(Valley of) bassa Venosta": "",
+        "Bolzano and Surroundings": "",
+        "Valley of Alta Badia": "",
+        "Valley of Alta d’Isarco": ""
       };
       
 		var onDropDownSelect1 = function(key, id) {	
@@ -50,7 +186,6 @@
             var remainingPart = '<ul>' + category.split('<ul>')[1];
             var newCategory = key + remainingPart;
             document.getElementById("dropDown1").innerHTML = newCategory;
-            console.log(dropDownData[key]);
             var dropDown2 = new DropDown( $('#dropDown2'), dropDownData[key] );
           } else if ('dropDown2' === id) {
             var category = document.getElementById("dropDown2").innerHTML;
@@ -102,12 +237,38 @@
 				});
 
 		});
+    function setGoodsCategories() {
+      var list = document.getElementById('dropDown1');
+      list.innerHTML = 'category<ul></ul>';
+      $(function() {
+        var dropDown1 = new DropDown( $('#dropDown1'), goodsDropdownData);
+        var dropDown1 = new DropDown( $('#dropDown1'), goodsDropdownData);
 
+          $(document).click(function() {
+                  // all dropdowns
+                  $('.wrapper-dropdown-5').removeClass('active');
+              });
+
+      });
+    }
+    function setServicesCategories() {
+      var list= document.getElementById('dropDown1');
+      list.innerHTML = 'category<ul></ul>';
+      $(function() {
+        var dropDown1 = new DropDown( $('#dropDown1'), servicesDropDownData);
+        var dropDown1 = new DropDown( $('#dropDown1'), servicesDropDownData);
+          $(document).click(function() {
+                  // all dropdowns
+                  $('.wrapper-dropdown-5').removeClass('active');
+              });
+      });
+    }
 	</script>
 	<style type="text/css">
 body {
 				background: #ffffff;
 			}
+
 
 
 		.tbix_dropdown {
@@ -202,6 +363,7 @@ body {
 			box-shadow: none;
 			border-bottom: none;
 			color: white;
+            z-index:1;
 		}
 
 		.tbix_dropdown.active:after {
@@ -272,11 +434,11 @@ body {
 		<div style="height: 80px; padding-left: 10vw;">
 			<div style="height: 100%; float: left; position: relative; width: 10vw;">
 				<div style="position: absolute; bottom: 50%; margin-bottom: 6px;">
-					<input type="radio" id="r1" name="rr" value="services" checked="checked"/>
+					<input type="radio" id="r1" name="rr" value="services" checked="checked" onclick="setServicesCategories()" />
 					<label for="r1"><span></span>services</label>
 				</div>
 				<div style="position: absolute; top: 50%; margin-top: 6px;">
-					<p><input type="radio" id="r2" name="rr" value="goods"/>
+					<p><input type="radio" id="r2" name="rr" value="goods" onclick="setGoodsCategories()" />
                       <label for="r2"><span></span>goods</label>
 					</p>
 				</div>
