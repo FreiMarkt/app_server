@@ -276,6 +276,8 @@
     function setGoodsCategories() {
       var list = document.getElementById('dropDown1');
       list.innerHTML = 'category<ul></ul>';
+      var list2 = document.getElementById('dropDown2');
+      list2.innerHTML = 'subcategory<ul></ul>';
       $(function() {
         var dropDown1 = new DropDown( $('#dropDown1'), goodsDropdownData);
         var dropDown1 = new DropDown( $('#dropDown1'), goodsDropdownData);
@@ -288,8 +290,10 @@
       });
     }
     function setServicesCategories() {
-      var list= document.getElementById('dropDown1');
+      var list = document.getElementById('dropDown1');
       list.innerHTML = 'category<ul></ul>';
+      var list2 = document.getElementById('dropDown2');
+      list2.innerHTML = 'subcategory<ul></ul>';
       $(function() {
         var dropDown1 = new DropDown( $('#dropDown1'), servicesDropDownData);
         var dropDown1 = new DropDown( $('#dropDown1'), servicesDropDownData);
