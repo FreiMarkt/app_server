@@ -14,7 +14,43 @@
 	<link rel="stylesheet" type="text/css" href="css/styleradio.css" />
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,300&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
-    <script src="js/collectValuesForSearch.js"></script>
+    <script src="js/registerOffer.js"></script>
+    <script src="js/genericTableDrawer.js"></script>
+    <script type="application/javascript">
+      function collectValuesForSearch() {
+        var categoryName = document.getElementById("dropDown1").innerHTML.split('<ul>')[0];
+        var subcategoryName = document.getElementById("dropDown2").innerHTML.split('<ul>')[0];
+        var cityName = document.getElementById("dropDown3").innerHTML.split('<ul>')[0];  
+        var r1 = document.getElementById('r1').checked;
+        var r2 = document.getElementById('r2').checked;
+
+        var searchObject = {
+          'category': categoryName,
+          'subcategory': subcategoryName,
+          'city': cityName,
+          'services': r1,
+          'goods': r2
+        };
+        insertOfferTable(searchObject);
+//        var searchResults = search(searchObject)
+        
+      }
+      
+      function tableButtonCallbackContact() {
+        var contacts = "Phone: +393391671279\nEmail: harald.astner@yahoo.de"; 
+        alert(contacts); 
+      }
+    </script>
+    <script>
+      function insertOfferTable(searchObject) {
+        var offers = getOffers(searchObject);
+        var blackNames = ["goods", "services", "memberId"];
+        var buttonNames = ["Contact"];
+        var table = '<br/>' + createActionTable(offers, blackNames, buttonNames) + '</br>';
+        var element = document.getElementById('searchfield');
+        element.innerHTML = table;  
+      }
+    </script>
 	<script type="text/javascript" src="js/modernizr.custom.79639.js"></script> 
 	<noscript><link rel="stylesheet" type="text/css" href="css/noJS.css" /></noscript>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
@@ -457,9 +493,9 @@ body {
 				
 				<div class="button1" style="float: left; position: relative; cursor: pointer; top: 50%; margin-top: -22px; margin-left: 10px; width: 150px; height: 44px; color: #ffffff; padding: 12px 5px; border-radius: 5px; background: #96c93c; text-align: center;" value="search" onclick="collectValuesForSearch();">SEARCH</div>
 			</div>	
-		</div>
+		
 	</div>
-
+        <div id="searchfield" style="margin-left:auto; margin-right:auto; width:50%;"><p></p></div>
 		</div>		
 	</div>	
 	<div style="width: 100%;">	
@@ -477,6 +513,10 @@ body {
 			</div>
 		</div>
 	</div>
+  
+  </div>
+        
+  
 	<div class="tbix_footer">
 		<div class="tbix_footer__item tbix_footer__item__first">
 			<a href="about.html" style="height: 100%; width: 100%;">

@@ -38,3 +38,11 @@ function sendOffer(offerObject) {
   http.send(JSON.stringify(offerObject));
   return http.responseText; 
 }
+
+function getOffers(searchObject) {
+  var http = new XMLHttpRequest();
+  http.open("GET", '/rest_services/r/offer/getAllOffers', false);
+  http.setRequestHeader('Content-Type', 'application/json');
+  http.send(JSON.stringify(searchObject));
+  return JSON.parse(http.responseText);
+}
