@@ -126,22 +126,22 @@
         };
       
       var servicesDropDownData = {
-        'kids': {
+        'Kids': {
           'babysitting': {},
           'animation for birthday parties': {},
           'playing groups': {}
         },
-        'students': {
+        'Students': {
           'homework support': {},
           'study-groups': {}
         },
-        'elders': {
+        'Elders': {
           'accompanying': {},
           'shopping support': {},
           'burocracy-support': {},
           'technology support': {}
         },
-        'languages': {
+        'Languages': {
           'language courses': {},
           'conversation courses': {},
           'learning by doing': {},
@@ -226,7 +226,7 @@
             document.getElementById("dropDown1").innerHTML = newCategory;
             
             var list2 = document.getElementById('dropDown2');
-            list2.innerHTML = 'subcategory<ul></ul>';
+            list2.innerHTML = 'what<ul></ul>';
             if (!(undefined === dropDown2)) {
               dropDown2.initEvents();
             }            
@@ -283,9 +283,9 @@
 		});
     function setGoodsCategories() {
       var list = document.getElementById('dropDown1');
-      list.innerHTML = 'category<ul></ul>';
+      list.innerHTML = 'to whom<ul></ul>';
       var list2 = document.getElementById('dropDown2');
-      list2.innerHTML = 'subcategory<ul></ul>';
+      list2.innerHTML = 'what<ul></ul>';
       dropDownData = goodsDropdownData;
       $(function() {
         var dropDown1 = new DropDown( $('#dropDown1'), goodsDropdownData);
@@ -300,9 +300,9 @@
     }
     function setServicesCategories() {
       var list = document.getElementById('dropDown1');
-      list.innerHTML = 'category<ul></ul>';
+      list.innerHTML = 'to whom<ul></ul>';
       var list2 = document.getElementById('dropDown2');
-      list2.innerHTML = 'subcategory<ul></ul>';
+      list2.innerHTML = 'what<ul></ul>';
       dropDownData = servicesDropDownData;
       $(function() {
         var dropDown1 = new DropDown( $('#dropDown1'), servicesDropDownData);
@@ -496,13 +496,13 @@ body {
 			<div style="height: 100%; float: left; width: 5vw;">				
 			</div>
 			<div style="height: 100%; float: left; position: relative; width: 75vw;">
-				<div id="dropDown1" class="tbix_dropdown" tabindex="1" style="float: left; top: 50%; margin-top: -22px;">category<ul></ul>
+				<div id="dropDown1" class="tbix_dropdown" tabindex="1" style="float: left; top: 50%; margin-top: -22px;">to whom<ul></ul>
 				</div>
 
-				<div id="dropDown2" class="tbix_dropdown" tabindex="1" style="margin-left: 10px; float: left; top: 50%; margin-top: -22px;">subcategory<ul></ul>
+				<div id="dropDown2" class="tbix_dropdown" tabindex="1" style="margin-left: 10px; float: left; top: 50%; margin-top: -22px;">what<ul></ul>
 				</div>
 
-				<div id="dropDown3" class="tbix_dropdown" tabindex="1" style="float: left; top: 50%; margin-top: -22px; margin-left: 10px; width: 150px;">city<ul></ul>
+				<div id="dropDown3" class="tbix_dropdown" tabindex="1" style="float: left; top: 50%; margin-top: -22px; margin-left: 10px; width: 150px;">where<ul></ul>
 				</div>
 				
 				<div class="button1" style="float: left; position: relative; cursor: pointer; top: 50%; margin-top: -22px; margin-left: 10px; width: 150px; height: 44px; color: #ffffff; padding: 12px 5px; border-radius: 5px; background: #96c93c; text-align: center;" value="search" onclick="collectValuesForSearch();">SEARCH</div>

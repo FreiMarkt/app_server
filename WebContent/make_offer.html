@@ -91,22 +91,22 @@
         };
       
       var servicesDropDownData = {
-        'kids': {
+        'Kids': {
           'babysitting': {},
           'animation for birthday parties': {},
           'playing groups': {}
         },
-        'students': {
+        'Students': {
           'homework support': {},
           'study-groups': {}
         },
-        'elders': {
+        'Elders': {
           'accompanying': {},
           'shopping support': {},
           'burocracy-support': {},
           'technology support': {}
         },
-        'languages': {
+        'Languages': {
           'language courses': {},
           'conversation courses': {},
           'learning by doing': {},
@@ -185,17 +185,13 @@
 		var onDropDownSelect1 = function(key, id) {	
           if ('dropDown1' === id) {
             var category = document.getElementById("dropDown1").innerHTML;
-            console.log(category);
             var oldCategoryName = category.split('<ul>')[0];
-            console.log(oldCategoryName);
             var remainingPart = '<ul>' + category.split('<ul>')[1];
-            console.log(remainingPart);
             var newCategory = key + remainingPart;
-            console.log(newCategory);
             document.getElementById("dropDown1").innerHTML = newCategory;
             
             var list2 = document.getElementById('dropDown2');
-            list2.innerHTML = 'subcategory<ul></ul>';
+            list2.innerHTML = 'what<ul></ul>';
             if (!(undefined === dropDown2)) {
               dropDown2.initEvents();
             }            
@@ -252,9 +248,9 @@
 		});
     function setGoodsCategories() {
       var list = document.getElementById('dropDown1');
-      list.innerHTML = 'category<ul></ul>';
+      list.innerHTML = 'to whom<ul></ul>';
       var list2 = document.getElementById('dropDown2');
-      list2.innerHTML = 'subcategory<ul></ul>';
+      list2.innerHTML = 'what<ul></ul>';
       dropDownData = goodsDropdownData;
       $(function() {
         var dropDown1 = new DropDown( $('#dropDown1'), goodsDropdownData);
@@ -269,9 +265,9 @@
     }
     function setServicesCategories() {
       var list = document.getElementById('dropDown1');
-      list.innerHTML = 'category<ul></ul>';
+      list.innerHTML = 'to whom<ul></ul>';
       var list2 = document.getElementById('dropDown2');
-      list2.innerHTML = 'subcategory<ul></ul>';
+      list2.innerHTML = 'what<ul></ul>';
       dropDownData = servicesDropDownData;
       $(function() {
         var dropDown1 = new DropDown( $('#dropDown1'), servicesDropDownData);
@@ -514,21 +510,21 @@
 					<div style="width: 100%;">
 				    	<div style="margin-bottom:20px; width: 100%; display: flex; flex-direction: row;">
 				    		<div style="position: relative; width: 150px" >
-					    		<label for="category"  style="position: absolute; top: 50%; line-height: 0; width: 100%; float: none; padding: 0;">Choose category</label>
+					    		<label for="category"  style="position: absolute; top: 50%; line-height: 0; width: 100%; float: none; padding: 0;">to whom</label>
 					    	</div>
 							<div id="dropDown1" class="tbix_dropdown" tabindex="1">category<ul></ul>
 							</div>				
 						</div>	
 						<div style="margin-bottom:20px; width: 100%; display: flex; flex-direction: row;">
 				    		<div style="position: relative; width: 150px" >
-					    		<label for="subcategory"  style="position: absolute; top: 50%; line-height: 0; width: 100%; float: none; padding: 0;">Subcategory</label>
+					    		<label for="subcategory"  style="position: absolute; top: 50%; line-height: 0; width: 100%; float: none; padding: 0;">what</label>
 					    	</div>
 							<div id="dropDown2" class="tbix_dropdown" tabindex="1">subcategory<ul></ul>
 							</div>				
 						</div>	
 						<div style="margin-bottom:20px; width: 100%; display: flex; flex-direction: row;">
 				    		<div style="position: relative; width: 150px" >
-					    		<label for="city"  style="position: absolute; top: 50%; line-height: 0; width: 100%; float: none; padding: 0;">Choose city</label>
+					    		<label for="city"  style="position: absolute; top: 50%; line-height: 0; width: 100%; float: none; padding: 0;">where</label>
 					    	</div>
 							<div id="dropDown3" class="tbix_dropdown" tabindex="1">city<ul></ul>
 							</div>				
