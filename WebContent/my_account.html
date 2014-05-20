@@ -11,10 +11,11 @@
         
         <link rel="stylesheet" type="text/css" href="css/style.css" />
         <link rel="stylesheet" type="text/css" href="css/styleradio.css" />
-         <link rel="stylesheet" type="text/css" href="style_datefield.css" />
+         <link rel="stylesheet" type="text/css" href="css/style_datefield.css" />
          <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,300&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
-        
+        <script src="js/getURLParameters.js"></script>
+        <script src="js/getMemberById.js"></script>
 		<script src="js/modernizr.custom.63321.js"></script>
 		<!--[if lte IE 7]><style>.main{display:none;} .support-note .note-ie{display:block;}</style><![endif]-->
 
@@ -280,6 +281,28 @@
 
 
 		</style>
+      <script type="application/javascript">
+        function saveChanges() {
+          var member = {"memberid":getURLParameters()['sessionid'],
+                        "firstname":document.getElementById("nameinput").value,
+                        "lastname":document.getElementById("lastnameinput").value,
+                        "ppassword":null,
+                        "age":0,
+                        "gender":document.getElementById("genderinput").value,
+                        "address":document.getElementById("residenceinput").value,
+                        "city":null,
+                        "country":null,
+                        "email":null,
+                        "phonenumber":document.getElementById("phonenumberinput").value,
+                        "paymentStatus":false,
+                        "fiftyfivemember":false,
+                        "postalcode":null,
+                        "birthday":(new Date("1989-04-11")).toISOString().split("T")[0],
+                        "roleId":0}
+          updateMember(member);
+          window.location.href = document.URL;
+        }
+      </script>
     </head>
     <body>
 
@@ -294,8 +317,8 @@
 
 				<div class="autorization">
 					<ul>
-						<li class="link" id="signup"><a href="Myaccount.html">My account</a></li>
-						<li class="link" id="login"><a href="logout.html">Log out</a></li>
+						<li class="link" id="signup"><a href="my_account.html">My account</a></li>
+						<li class="link" id="login"><a href="index.html">Log out</a></li>
 					</ul>
 				</div>
 		</div>
@@ -321,22 +344,68 @@
 			    	</div>
     
     
-					<div style="float: left; margin: 30px; margin-top: 0px; margin-right: 50px;" class="inf1"> 
-					    <div id="name">Name</div>
-					    <div id="lastname">Last name</div>
-					    <div id="dateofbirth">Date of birth</div>
-					    <div id="gender">Gender</div>
-					    <div id="phonenumber">Phone number</div>
-					    <div id="residence">Residence</div>
-						<div id="inform"  style="width: 140px;"> 
-					    Information about your skills, interests
-					    </div>
+					<div style="float: left; margin: 30px; margin-top: 0px; margin-right: 50px;" class="inf1">
+                      <table>
+                        <tr>
+                          <td>
+                            <div id="name">Name</div>
+                          </td>
+                          <td><input id="nameinput" type="text" value="" /></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div id="lastname">Last name</div>
+                          </td>
+                          <td><input id="lastnameinput" type="text" value="" /></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div id="dateofbirth">Date of birth</div>
+                          </td>
+                          <td><input id="dateofbirthinput" type="text" value="" /></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div id="gender">Gender</div>
+                          </td>
+                          <td><input id="genderinput" type="text" value="" /></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div id="phonenumber">Phone number</div>
+                          </td>
+                          <td><input id="phonenumberinput" type="text" value="" /></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div id="residence">Residence</div>
+                          </td>
+                          <td><input id="residenceinput" type="text" value="" /></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div id="inform"  style="width: 140px;">Information about your skills, interests</div>
+                          </td>
+                          <td><textarea id="informinput" rows="7" cols="15" value=""></textarea></td>
+                        </tr>
+                      </table>
 					    <div class="button2" style="margin-top:30px;">
-						<input type="submit" formaction="1step.html" name="submit" value="edit">
+						<input type="submit" formaction="my_account.html" name="submit" value="update" onclick="saveChanges();">
 						</div>
 					</div>
 				</div>	
-
+              <script type="application/javascript">
+                var currentMemberId = {'memberid': getURLParameters()['sessionid']}; 
+                var currentMember = getMemberByUUID(currentMemberId);
+                
+                document.getElementById('nameinput').value = currentMember['firstname'];
+                document.getElementById('lastnameinput').value = currentMember['lastname'];
+                document.getElementById('dateofbirthinput').value = currentMember['birthday'];
+                document.getElementById('genderinput').value = currentMember['gender'];
+                document.getElementById('phonenumberinput').value = currentMember['phonenumber'];
+                document.getElementById('residenceinput').value = currentMember['address'];
+                document.getElementById('informinput').value = "description of me";
+              </script>
 			</div>
 
 			<div style="position: relative; width: 50%; padding: 20px; padding-left: 0px;">
@@ -361,7 +430,7 @@
 					</div>
 
 					<div class="tbix_footer__item" style="margin-top: 50px;">
-						<a href="feedback.html" style="height: 100%; width: 100%;">
+						<a href="faq.html" style="height: 100%; width: 100%;">
 							<img src="images/help1.png" style="width: 70%;"/>
 							<div style="font-size: 200%; width: 150px; padding-left: 2vw;">Call helper</div>
 							

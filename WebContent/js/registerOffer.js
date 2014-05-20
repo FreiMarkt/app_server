@@ -22,7 +22,6 @@ function registerOffer() {
   };
   
   var result = sendOffer(offerObject);
-  alert(result);
   if (result) {
     window.location.href = "request_done.html";
     return true;
