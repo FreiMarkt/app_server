@@ -20,7 +20,7 @@
 	<noscript><link rel="stylesheet" type="text/css" href="css/noJS.css" /></noscript>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	<script type="text/javascript">
-var goodsDropdownData = {
+    var goodsDropdownData = {
           'Kids': {
             'Toys and Games': {},
             'Strollers, Car-Seats': {},
@@ -112,6 +112,12 @@ var goodsDropdownData = {
           'learning by doing': {},
           'translations': {}
         },
+        'In and Around the House': {
+          'Household support': {},
+          'Shopping support': {},
+          'Cooking': {},
+          'Gardening': {}
+        },
         'Handcrafts & Technology': {
           'Mechanic': {},
           'Taylor': {},
@@ -136,12 +142,6 @@ var goodsDropdownData = {
         'T-BiX support': {
           'help in signing up': {},
           'help in upgrading profile': {}
-        },
-        'In and Around the House': {
-          'Household support': {},
-          'Shopping support': {},
-          'Cooking': {},
-          'Gardening': {}
         },
         'New Media': {
           'how to use your smartphone': {},
@@ -180,15 +180,26 @@ var goodsDropdownData = {
         "Valley of Alta d’Isarco": ""
       };
       
+      var dropDown2;
+      
 		var onDropDownSelect1 = function(key, id) {	
           if ('dropDown1' === id) {
             var category = document.getElementById("dropDown1").innerHTML;
+            console.log(category);
             var oldCategoryName = category.split('<ul>')[0];
+            console.log(oldCategoryName);
             var remainingPart = '<ul>' + category.split('<ul>')[1];
+            console.log(remainingPart);
             var newCategory = key + remainingPart;
+            console.log(newCategory);
             document.getElementById("dropDown1").innerHTML = newCategory;
-//            console.log(dropDownData[key]);
-            var dropDown2 = new DropDown( $('#dropDown2'), dropDownData[key] );
+            
+            var list2 = document.getElementById('dropDown2');
+            list2.innerHTML = 'subcategory<ul></ul>';
+            if (!(undefined === dropDown2)) {
+              dropDown2.initEvents();
+            }            
+            dropDown2 = new DropDown( $('#dropDown2'), dropDownData[key] );
           } else if ('dropDown2' === id) {
             var category = document.getElementById("dropDown2").innerHTML;
             var oldCategoryName = category.split('<ul>')[0];
@@ -239,9 +250,12 @@ var goodsDropdownData = {
 				});
 
 		});
-      function setGoodsCategories() {
+    function setGoodsCategories() {
       var list = document.getElementById('dropDown1');
       list.innerHTML = 'category<ul></ul>';
+      var list2 = document.getElementById('dropDown2');
+      list2.innerHTML = 'subcategory<ul></ul>';
+      dropDownData = goodsDropdownData;
       $(function() {
         var dropDown1 = new DropDown( $('#dropDown1'), goodsDropdownData);
         var dropDown1 = new DropDown( $('#dropDown1'), goodsDropdownData);
@@ -254,8 +268,11 @@ var goodsDropdownData = {
       });
     }
     function setServicesCategories() {
-      var list= document.getElementById('dropDown1');
+      var list = document.getElementById('dropDown1');
       list.innerHTML = 'category<ul></ul>';
+      var list2 = document.getElementById('dropDown2');
+      list2.innerHTML = 'subcategory<ul></ul>';
+      dropDownData = servicesDropDownData;
       $(function() {
         var dropDown1 = new DropDown( $('#dropDown1'), servicesDropDownData);
         var dropDown1 = new DropDown( $('#dropDown1'), servicesDropDownData);
@@ -429,7 +446,7 @@ var goodsDropdownData = {
 
 		.tbix_dropdown.active > ul {
 			border-bottom: 1px solid rgba(0,0,0,0.2);
-			max-height: 400px;
+			max-height: 800px;
 		}
 
 		.tbix_footer {
