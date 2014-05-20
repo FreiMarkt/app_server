@@ -215,6 +215,8 @@
         "Valley of Alta d’Isarco": ""
       };
       
+      var dropDown2;
+      
 		var onDropDownSelect1 = function(key, id) {	
           if ('dropDown1' === id) {
             var category = document.getElementById("dropDown1").innerHTML;
@@ -222,7 +224,13 @@
             var remainingPart = '<ul>' + category.split('<ul>')[1];
             var newCategory = key + remainingPart;
             document.getElementById("dropDown1").innerHTML = newCategory;
-            var dropDown2 = new DropDown( $('#dropDown2'), dropDownData[key] );
+            
+            var list2 = document.getElementById('dropDown2');
+            list2.innerHTML = 'subcategory<ul></ul>';
+            if (!(undefined === dropDown2)) {
+              dropDown2.initEvents();
+            }            
+            dropDown2 = new DropDown( $('#dropDown2'), dropDownData[key] );
           } else if ('dropDown2' === id) {
             var category = document.getElementById("dropDown2").innerHTML;
             var oldCategoryName = category.split('<ul>')[0];
@@ -278,6 +286,7 @@
       list.innerHTML = 'category<ul></ul>';
       var list2 = document.getElementById('dropDown2');
       list2.innerHTML = 'subcategory<ul></ul>';
+      dropDownData = goodsDropdownData;
       $(function() {
         var dropDown1 = new DropDown( $('#dropDown1'), goodsDropdownData);
         var dropDown1 = new DropDown( $('#dropDown1'), goodsDropdownData);
@@ -294,6 +303,7 @@
       list.innerHTML = 'category<ul></ul>';
       var list2 = document.getElementById('dropDown2');
       list2.innerHTML = 'subcategory<ul></ul>';
+      dropDownData = servicesDropDownData;
       $(function() {
         var dropDown1 = new DropDown( $('#dropDown1'), servicesDropDownData);
         var dropDown1 = new DropDown( $('#dropDown1'), servicesDropDownData);
@@ -412,7 +422,7 @@ body {
 
 		.tbix_dropdown.active > ul {
 			border-bottom: 1px solid rgba(0,0,0,0.2);
-			max-height: 400px;
+			max-height: 600px;
 		}
 
 		.tbix_footer {
